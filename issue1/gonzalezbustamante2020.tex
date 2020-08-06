@@ -1,0 +1,351 @@
+\documentclass[a4paper]{tufte-handout}
+\usepackage{marvosym}
+\usepackage[spanish]{babel}
+
+\title{Aplicación de ForceAtlas2, un algoritmo de diseño gráfico continúo, para el estudio de las élites\thanks{Este trabajo es una versión revisada de la ponencia presentada en el simposio ``\'Elites pol\'itico-administrativas: Delineando una agenda de investigaci\'on'' organizado en la Universidad de Santiago de Chile en noviembre de 2018.}
+\\~\\~\\} 
+
+\author{{\normalfont Basti\'an Gonz\'alez-Bustamante}\thanks{PRS DPhil in Politics, Department of Politics and International Relations and St Hilda's College, University of Oxford. Profesor Instructor, Departamento de Gesti\'on y Pol\'iticas P\'ublicas, Facultad de Administraci\'on y Econom\'ia, Universidad de Santiago de Chile.}}
+\date{{\normalfont \normalsize \vspace{-1mm}University of Oxford} \\ {\LARGE \Letter} \href{mailto:bastian.gonzalezbustamante@politics.ox.ac.uk}{\textcolor{blue}{\normalfont \normalsize bastian.gonzalezbustamante@politics.ox.ac.uk}} \\~\\
+{\normalfont Carla Cisternas}\thanks{Asistente de Investigaci\'on, Departamento de Gesti\'on y Pol\'iticas P\'ublicas, Facultad de Administraci\'on y Econom\'ia, Universidad de Santiago de Chile.} \\ {\normalfont \normalsize Universidad de Santiago de Chile} \\ 
+{\LARGE \Letter} \href{mailto:carla.cisternas@usach.cl}{\textcolor{blue}{\normalfont \normalsize carla.cisternas@usach.cl}}
+}%% \\~\\} % without \date command, current date is supplied
+
+\hyphenation{Latino-america-na Elecci\'on eleccio-nes ALACIP}
+
+%% \geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+ \pdfinfo{
+   /Author (Basti\'an Gonz\'alez-Bustamante)
+   /Title  (ForceAtlas2, un algoritmo de dise\~no gr\'afico contin\'uo)
+   Subject (Tufte Working Papers)
+   %% /Keywords (Capital pol\'itico, elecciones, gasto en campa\~nas, incumbencia, Chile.)
+}
+
+\addto\captionsspanish{
+%%\def\refname{Bibliograf\'ia consultada}
+\def\tablename{Tabla}
+\def\figurename{G\'rafico}
+}
+
+%% \usepackage[numbers]{natbib}
+%% \usepackage{cclicenses}
+
+\usepackage{subfig}
+
+\usepackage{emerald}
+\usepackage[T1]{fontenc}
+
+\usepackage{multirow} 
+
+\usepackage{hyperref}
+
+\usepackage{xcolor, colortbl}
+
+\usepackage{lipsum}  
+
+\begin{document}
+
+\maketitle
+
+\vspace{8mm}
+\justify{\small {\bfseries Resumen:} Este documento de trabajo prueba un algoritmo alterantiva para los períodos legislativos analizados por González-Bustamante y Cisternas (2016). Se utiliza específicamente ForceAtlas2, el cual es un algoritmo de diseño gráfico continuo desarrollado por Jacomy et al. (2013) basado en un diseño de fuerza directa.\marginnote{{\itshape {\bfseries Palabras clave:} \'Elites; capital político, carreras legislativas; ARS; Chile.}} and economic capitals are relevant factors for electoral success.}\\~\\
+
+{\noindent \LARGE \itshape Applying ForceAtlas2, a Continuous Graph Layout Algorithm, to the Elites Study}\\
+
+\justify{\small {\bfseries Abstract:} This working paper tests an alternative algorithm for the legislative periods analysed by González-Bustamante and Cisternas (2016). Specifically, ForceAtlas2 is used, which is a continuous graph layout algorithm developed by Jacomy et al. (2013) based on a force-directed design.\marginnote{{\itshape {\bfseries Keywords:} Elites; political capital, legislative careers; SNA; Chile.}} and economic capitals are relevant factors for electoral success.}
+
+\vspace{8mm}
+\section[Introducci\'on] {{\normalfont Introducci\'on}\footnote{Esta investigaci\'on fue parcialmente financiada por los proyectos CONICYT/FONDECYT/1130054 y USA1498.37 de la Universidad de Santiago de Chile.}}
+
+\justify{En Gonz\'alez-Bustamante y Cisternas (2016) se analiz\'o la composici\'on social de las \'elites pol\'iticas en el poder legislativo chileno, espec\'ificamente en la C\'amara de Diputados durante el per\'iodo 1990-2014. En aquel art\'iculo se abordaron las caracter\'isticas personales y las tasas de reelecci\'on de todos los diputados que ejercieron durante aquellos a\~nos ({\itshape n} = 720). Adem\'as, con indicadores simples, an\'alisis de cl\'uster y An\'alisis de Redes Sociales ({\itshape Social Network Analysis}, SNA), se midi\'o el grado de homogeneidad y el trasfondo educacional de las seis legislaturas del per\'iodo. Los hallazgos evidenciaron que la composici\'on social de las legislaturas fue m\'as homog\'enea y, por tanto, existieron redes m\'as densas, mientras m\'as antigua la legislatura, es decir, cuando m\'as cerca de la transici\'on democr\'atica de fines de la d\'ecada de 1980 se estaba\footnote{Para una reflexi\'on te\'orica sobre \'elites pol\'iticas y poder legislativo v\'ease el art\'iculo original.}.}
+
+\justify{En t\'erminos metodol\'ogicos se utiliz\'o Hirschman-Herfindahl index (HHI), tradicionalmente usado para medir concentraciones de mercado, con el objetivo de evaluar la homogeneidad del trasfondo educacional en las distintas legislaturas. Esto se complement\'o con an\'alisis de cl\'uster con un algoritmo {\itshape K-means clustering} o de agrupamiento no jer\'arquico, en l\'inea con los an\'alisis de Gonz\'alez-Bustamante y Olivares (2015) sobre subsecretarios chilenos entre 1990 y 2014\footnote{Aplicaciones no convencionales recientes son Valenzuela y Arriagada (2009) y Gonz\'alez-Bustamante y Soto (2016) para evaluar la homogeneidad de agendas tem\'aticas en medios. Por otro lado, Joignant (2014) lo utiliz\'o para evaluar la concentraci\'on de la parentela pol\'itica en las elecciones de 2013.}. Se trabaj\'o espec\'ificamente con Cali\'niski-Harabasz index con m\'etodo Hellinger para determinar el n\'umero de cl\'usteres. Para esto se utilizaron caracter\'isticas individuales de los diputados como sexo, militancia y variables relacionadas con su trasfondo educacional.}
+
+\justify{Aquellas variables tambi\'en se utilizaron para un SNA, el cual permite identificar interrelaciones y v\'inculos en un grupo determinado (Friedkin, 1981; Hanneman y Riddle, 2005; Wasserman y Faust, 1994). Se utiliz\'o el algoritmo Fruchterman y Reingold (1991), una modificaci\'on del modelo {\itshape spring-embedder} de Eades (1984), donde se asimila el grafo a un sistema de part\'iculas de masa en el cual los {\itshape nodos} son las part\'iculas y los {\itshape edges} o v\'inculos operan como resortes de repulsi\'on\footnote{La met\'afora cl\'asica de Eades (1984) indicaba que para dise\~nar un gr\'afico se deb\'ia reemplazar los v\'ertices ({\itshape nodos}) por anillos de acero y los v\'inculos ({\itshape edges}) por un resorte para formar un sistema mec\'anico. Los v\'ertices se colocan en un dise\~no inicial que se deja en libertad para que las fuerzas de los anillos muevan al sistema a un nuevo estado m\'inimo de energ\'ia.}.}
+
+\justify{\textcolor{red}{En este contexto, tal como se indica en González-Bustamante (2020) y Olivares et al. (2020), si bien el an\'alisis de redes sociales aplicado al estudio de las \'elites pol\'iticas tiene diversas potencialidades, pueden existir algunos problemas cuando se basa en la idea de que los atributos se cristalizan en perspectivas ideol\'ogicas u ontol\'ogicas. Esto porque el concepto de cristalizaci\'on se asocia, por ejemplo, al {\itshape habitus} de Bourdieu (1980), por tanto, opera una estructura estructurante que la genera y transforma en redes de cooperaci\'on. Sin embargo, puede ser el caso que el v\'inculo no exista o que la relaci\'on sea conflictiva. Por otra parte, cuando se trabaja desde una perspectiva relacional, pueden existir problemas de deseabilidad social}\footnote{Para m\'as detalles se recomienda revisar Urizzi Cervi (2015).}.}
+
+\justify{Este trabajo eval\'ua un algoritmo alternativo para las legislaturas analizadas por Gonz\'alez-Bustamante y Cisternas (2016). Espec\'ificamente se utiliza ForceAtlas2, un algoritmo de dise\~no gr\'afico contin\'uo desarrollado por Jacomy, Venturini, Heymann y Bastian (2014) con base en un dise\~no dirigido por fuerza ({\itshape force-directed}). Si bien el algoritmo Fruchterman y Reingold (1991) tambi\'en es dirigido por fuerza, los modelos de energ\'ia var\'ian ya que cada algoritmo se basa en f\'ormulas diferentes para la fuerza de atracci\'on y de repulsi\'on.}
+
+\justify{Este documento se estructura en tres apartados. Primero, un apartado metodol\'ogico que detalla los datos y algoritmos usados. Segundo, los principales resultados de la aplicaci\'on de ForceAtlas2. Finalmente, un breve resumen de los principales hallazgos y l\'ineas futuras de investigaci\'on.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section[M\'etodo] {{\normalfont M\'etodo}}
+
+\subsection[Datos] {Datos}
+
+\justify{De la misma forma que Gonz\'alez-Bustamante y Cisternas (2016), se utiliza una base de datos con informaci\'on electoral y biogr\'afica de los candidatos que compitieron en las elecciones a diputados en Chile entre 1989 y 2009 ({\itshape N} = 2.441). La base se elabora a partir de datos de Joignant (2014), Gonz\'alez-Bustamante (2014) e informaci\'on del Servicio Electoral de Chile (SERVEL)\footnote{Para informaci\'on detallada sobre bases de datos similares y trabajo emp\'irico reciente sobre \'elites en Chile v\'ease Gonz\'alez-Bustamante y Olivares (2018) y Maillet, Gonz\'alez-Bustamante y Olivares (2016).}. }
+
+\begin{table}[h]
+  \centering
+  \fontfamily{ppl}\selectfont
+  %% \stepcounter{figure}
+   \smallskip\noindent\small Tabla 1 \\ Candidaturas, electividad y reelecci\'on C\'amara de Diputados en Chile (1990-2014) \\~\\
+  \begin{tabular}{c c c c c}
+    \toprule
+    Elecci\'on & Legislatura & Candidatos & Electividad & Reelecci\'on \\
+    \midrule
+    1989 & 1990-1994 & 419 & 28,6 & -- \\
+    1993 & 1994-1998 & 384 & 31,3 & 58,3 \\
+    1997 & 1998-2002 & 442 & 27,2 & 60,8 \\
+    2001 & 2002-2006 & 381 & 31,5 & 61,7 \\
+    2005 & 2006-2010 & 386 & 31,1 & 64,2 \\
+    2009 & 2010-2014 & 429 & 28,0 & 61,7 \\
+    \midrule
+     & & 2.441 & 29,5 & 61,3 \\
+    \bottomrule
+  \end{tabular}
+  \\~\\ \smallskip\noindent\scriptsize Fuente: Adaptaci\'on de Gonz\'alez-Bustamante y Cisternas (2016) con datos de Joignant (2014), Gonz\'alez-Bustamante (2014) y del Servicio Electoral de Chile.
+  %% \caption{}
+  %% \label{tab:muestra}
+  %% \zsavepos{pos:normaltab}
+\end{table}
+
+\justify{El an\'alisis se realiza sobre los diputados electos ({\itshape n} = 720), que corresponden a 329 individuos debido a las altas tasas de incumbencia y reelecci\'on en la C\'amara de Diputados chilena (tabla 1). Los datos de reelecci\'on que se presentan corresponden a los incumbentes que tuvieron \'exito en su mismo distrito. El promedio se eleva a 62,8\% si se considera a aquellos que, estrat\'egicamente, buscaron su reelecci\'on en otro distrito\footnote{Tal como indican Gonz\'alez-Bustamante y Cisternas (2016) estos datos difieren levemente de los de Bunker y Navia (2015), pues se reporta un diputado menos reelecto en 2001, lo que fue verificado con informaci\'on actualizada del Servicio Electoral. Hay otras cifras de reelecci\'on, como las de Salda\~na (2014), que no concuerdan con estos datos ni con los de Bunker y Navia.}.}
+
+\subsection[Algoritmos] {Algoritmos}
+
+\justify{El modelo {\itshape spring-embedder} de Eades (1984) opera con una f\'ormula de atracci\'on $F_{\alpha} = -k * d$, donde $d$ es una distancia geom\'etrica entre dos {\itshape nodos} y $k$ un ajuste para el escalamiento de la red, y una f\'ormula de repulsi\'on como si se tratase de part\'iculas el\'ectricamente cargadas $F_{r} = k /d^{2}$. La f\'ormula cl\'asica de Fruchterman y Reingold (1991), utilizada por Gonz\'alez-Bustamante y Cisternas (2016), constituye una modificaci\'on basada en f\'ormulas de atracci\'on $F_{\alpha} = d^{2} / k$ y repulsi\'on $F_{r} = -k^{2} / d$.}
+
+\justify{En general, la diferencia m\'as relevante entre los algoritmos dirigidos por fuerza es el rol de la distancia en la espacializaci\'on del gr\'afico (Noack, 2007a; v\'ease tambi\'en Jacomy {\itshape et al.}, 2014). La fuerza depende de la distancia entre los {\itshape nodos} y la relaci\'on entre ambas puede ser lineal, exponencial o logar\'itmica (Jacomy {\itshape et al.}, 2014).  En el modelo cl\'asico de Eades (1984) la relaci\'on es lineal. Por tanto, la ecuaci\'on de un modelo atracci\'on por fuerza lineal sin constante ser\'ia (1).}
+
+\begin{equation} %% ECC 1
+F_{\alpha}(n_{1}, n_{2}) = d(n_{1}, n_{2})
+\end{equation}
+
+\justify{Si se utiliza el concepto de modelo de energ\'ia o de atracci\'on-repulsi\'on de Noack (2009), se puede especificar una notaci\'on simple para cada algoritmo basada en el exponente de la distancia de las f\'ormulas de $F_{\alpha}$ y $F_{r}$. Entonces, para {\itshape spring-embedder} ser\'ia (1, -2), Fruchterman y Reingold (2, -1), ForceAtlas (1, -1). Para ForceAtlas2 la f\'ormula de repulsi\'on toma en cuenta el grado de los {\itshape nodos} ({\itshape deg}) con base en un recuento de los {\itshape edges} conectados, siendo muy similar a la f\'ormula de Noack (2007a) con un ajuste de +1 para asegurar que $deg = 0$ tenga algo de fuerza de repulsi\'on (2) (Jacomy {\itshape et al.}, 2014). En este trabajo se utiliza $k_{r} = 1,5$.
+
+\begin{equation} %% ECC 2
+F_{r}(n_{1}, n_{2}) = k_{r}\frac{(deg(n_{1}) + 1) (deg(n_{2}) + 1)}{d(n_{1}, n_{2})}
+\end{equation}
+
+\justify{Por otra parte, se utiliza un modelo logar\'itmico de fuerza basado en el modelo de energ\'ia LinLog de Noack (2007b), con un ajuste similar al de la f\'ormula de repulsi\'on (3) (Jacomy {\itshape et al.}, 2014).}
+
+\begin{equation} %% ECC 3
+F_{\alpha}(n_{1}, n_{2}) = log (1 + d(n_{1}, n_{2}))
+\end{equation}
+
+\justify{Adem\'as, se utiliza un efecto de gravedad $F_{g}(n)$ para prevenir la desconexi\'on de componentes que formen islas alejadas en el grafo (4). En este trabajo se utiliza $k_{g} = 1,5$.}
+
+\begin{equation} %% ECC 4
+F_{g} = k_{g} (deg(n) + 1)
+\end{equation}
+
+\justify{Por \'ultimo, se utilizan dos efectos propios de ForceAtlas2: disuadir centros de actividad ({\itshape Hubs}) y evitar solapamiento (Jacomy {\itshape et al.}, 2014). El efecto de disuadir {\itshape Hubs} permite que {\itshape nodos} con mayor cantidad de v\'inculos dirigidos hac\'ia si mismos ocupen posiciones centrales. Para esto se divide la fuerza de atracci\'on de cada {\itshape nodo} por su grado m\'as uno (5).}
+
+\begin{equation} %% ECC 5
+F_{\alpha}(n_{1}, n_{2}) = \frac{d(n_{1}, n_{2})}{deg(n_{1} + 1)}
+\end{equation}
+
+\justify{El efecto para evitar solapamiento, por otra parte, mejora la visualizaci\'on considerando el tama\~no de los {\itshape nodos} y su distancia $d^{`} (n_{1}, n_{2}) = d (n_{1}, n_{2}) - size(n_{1}) - size(n_{2})$. Si $d^{`} (n_{1}, n_{2}) > 0$ no hay solapamiento, por lo cual se utiliza la ecuaci\'on de repulsi\'on normal. Sin embargo, si $d^{`} (n_{1}, n_{2}) < 0$, entonces $F_{\alpha} (n_{1}, n_{2}) = 0$ y la repulsi\'on ser\'a m\'as fuerte (6) (Jacomy {\itshape et al.}, 2014).}
+
+\begin{equation} %% ECC 6
+F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
+\end{equation}
+
+\justify{Adem\'as, siguiendo a Blondel, Guillaume, Lambiotte y Lefebvre (2008), se utiliza un algoritmo de modularidad donde cada {\itshape nodo} $i$ se sit\'ua con sus {\itshape alters} $j$ y se eval\'ua la ganancia de modularidad al eliminar $i$. El {\itshape nodo} entonces se coloca en la comunidad $C$ donde la ganancia es m\'axima siempre que sea positiva, si es negativa se mantiene en la posici\'on inicial. Este proceso se itera hasta que no existen movimientos que puedan mejorar el nivel de modularidad (Newman y Girvan, 2004).  La modularidad $\Delta Q$ se calcula considerando los v\'inculos $in$ dentro de $C$, los v\'inculos $tot$ hacia {\itshape nodos} dentro de $C$, la suma $k_{i}$ de enlaces hacia el {\itshape nodo} $i$ cuyo aporte se eval\'ua, y la suma de todos los v\'inculos de la red $m$ (7) (Blondel {\itshape et al.}, 2008)\footnote{Tambi\'en se calcula el di\'ametro de la red con el algoritmo de centralidad de intermediaci\'on de Brandes (2001). Esto permite estimar el sendero m\'as extenso entre cualquier {\itshape nodo} de la red.}.}
+
+\begin{equation} %% ECC 7
+\Delta Q = \left[\frac{\sum_{in} + 2k_{i, in}}{2m} - \left(\frac{\sum_{tot} + k_{i}}{2m}\right)^{2}\right] - \left[\frac{\sum_{in}}{2m} - \left(\frac{\sum_{tot}}{2m}\right)^{2} - \left(\frac{k_{i}}{2m}\right)^{2}\right]
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section[Resultados] {{\normalfont Resultados}}
+
+\subsection[Fuchterman y Reingold vs. ForceAtlas2] {Fuchterman y Reingold vs. ForceAtlas2}
+
+\justify{A continuaci\'on, se presentan los grafos por cada legislatura. Aquellos graficados con el algoritmo Fruchterman y Reingold son los originales de Gonz\'alez-Bustamante y Cisternas (2016), pero con colores y {\itshape edges} curvos. Se utiliza una paleta de colores que distingue la militancia pol\'itica. Los grafos con el algoritmo ForceAtlas2 utilizan la misma paleta de colores y los valores de gravedad y repulsi\'on estipulados en el apartado metodol\'ogico.}
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{labelformat=empty}
+  \centering
+  \smallskip\noindent\small Grafo 1 \\ Legislatura 1990-1994
+  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{figures/FR-1990}}
+  \subfloat[ForceAtlas2]{\includegraphics[width=.49\linewidth]{figures/FA2-1990}}
+  %% \caption{}
+  %% \label{fig:fullfig}
+  \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versi\'on se utilizan colores para indicar militancia pol\'itica: PDC azul purp\'ureo, RN malaquita, IND tomate, PPD violeta, UDI anaranjado, PR malva, PAIS carmes\'i y PH verde oscuro.\\
+  Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
+\end{figure}
+
+\justify{En el grafo 1 con ForceAtlas2 se aprecian con mayor claridad los dos grandes conglomerados de {\itshape nodos} compuestos por el Partido Dem\'ocrata Cristiano (PDC) y Renovaci\'on Nacional (RN). Con el algoritmo Fruchterman y Reingold se aprecia que un subgrupo de {\itshape nodos} de RN tiende a operar como intermediarios. En el grafo con ForceAtlas2 se aprecia de mejor forma como parte del conglomerado tiene mayores conexiones con otros, a diferencia de un grupo m\'as cerrado con conexiones m\'as fuertes. El valor del grafo medio es 38,567, es decir, en promedio un {\itshape nodo} posee esa cantidad de {\itshape alters} vecinos. El di\'ametro de la red es de cinco, es decir, esa es la m\'axima distancia que existe entre cualquier {\itshape nodo}. Por \'ultimo, la densidad de la red es de 0,324.}
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{labelformat=empty}
+  \centering
+  \smallskip\noindent\small Grafo 2 \\ Legislatura 1994-1998
+  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{figures/FR-1994}}
+  \subfloat[ForceAtlas2]{\includegraphics[width=.49\linewidth]{figures/FA2-1994}}
+  %% \caption{}
+  %% \label{fig:fullfig}
+  \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versi\'on se utilizan colores para indicar militancia pol\'itica: PDC azul purp\'ureo, RN malaquita, UDI tomate, PS violeta, PPD anaranjado, IND malva, UCC carmes\'i y PR verde oscuro.\\
+  Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
+\end{figure}
+
+\justify{El grafo 2 mantiene los patrones del anterior, se aprecia un conglomerado de {\itshape nodos} del PDC que se alejan de del resto de la red, adem\'as de un conglomerado mixto entre el Partido Por la Democracia (PPD) y el Partido Socialista de Chile (PS). En este caso el algoritmo ForceAtlas2 tambi\'en permite una mejor visualizaci\'on. El grafo medio es de 42,667, el di\'ametro de tres y la densidad de 0,359. Si bien la densidad no var\'ia sustancialmente, es una red con menor di\'ametro que la anterior.}
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{labelformat=empty}
+  \centering
+  \smallskip\noindent\small Grafo 3 \\ Legislatura 1998-2002
+  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{figures/FR-1998}}
+  \subfloat[ForceAtlas2]{\includegraphics[width=.49\linewidth]{figures/FA2-1998}}
+  %% \caption{}
+  %% \label{fig:fullfig}
+  \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versi\'on se utilizan colores para indicar militancia pol\'itica: PDC azul purp\'ureo, RN malaquita, UDI tomate, PPD violeta, PS anaranjado, IND malva, PRSD carmes\'i y UCCP verde oscuro.\\
+  Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
+\end{figure}
+
+\justify{En el grafo 3 se puede apreciar un crecimiento de los {\itshape nodos} pertenecientes a la Uni\'on Dem\'ocrata Independiente (UDI), conglomerado que tiene lazos principalmente con RN, sus socios de coalici\'on. En el grafo con el algoritmo ForceAtlas2 se puede apreciar su constituci\'on de mejor forma: como un m\'odulo con fuertes conexiones entre s\'i y conexiones con RN, lo que los ubica en la periferia de la red. El grafo medio es de 39,183, el di\'ametro de la red cuatro y la densidad 0,329.}
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{labelformat=empty}
+  \centering
+  \smallskip\noindent\small Grafo 4 \\ Legislatura 2002-2006
+  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{figures/FR-2002}}
+  \subfloat[ForceAtlas2]{\includegraphics[width=.49\linewidth]{figures/FA2-2002}}
+  %% \caption{}
+  %% \label{fig:fullfig}
+  \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versi\'on se utilizan colores para indicar militancia pol\'itica: UDI azul purp\'ureo, PDC malaquita, PPD tomate, RN violeta, IND anaranjado, PS malva y PRSD carmes\'i.\\
+  Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
+\end{figure}
+
+\justify{En el grafo 4 se aprecia un crecimiento importante de la UDI. Aquello se percibe de mejor forma con la aplicaci\'on del algoritmo ForceAtlas2, como tambi\'en la posici\'on de intermediaci\'on que tienden a ocupar ciertos {\itshape nodos}. El grafo medio de la red es 34,767, el di\'ametro cuatro y la densidad 0,292.}
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{labelformat=empty}
+  \centering
+  \smallskip\noindent\small Grafo 5 \\ Legislatura 2006-2010
+  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{figures/FR-2006}}
+  \subfloat[ForceAtlas2]{\includegraphics[width=.49\linewidth]{figures/FA2-2006}}
+  %% \caption{}
+  %% \label{fig:fullfig}
+  \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versi\'on se utilizan colores para indicar militancia pol\'itica: UDI azul purp\'ureo, PPD malaquita, PDC tomate, RN violeta, PS anaranjado, PRSD malva, IND carmes\'i y PAR verde oscuro.\\
+  Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
+\end{figure}
+
+\justify{En el grafo 5 tambi\'en se aprecian mejor las posiciones de intermediaci\'on en la red gracias al algoritmo ForceAtlas2. Es posible identificar mejor la cercan\'ia entre los conglomerados del PPD, PS y PDC. Adem\'as, mientras que con el algoritmo Fruchterman y Reingold RN no parece un conglomerado cohesionado, ForceAtlas2 permite apreciar dos grupos: uno fuertemente cohesionado en la periferia de la red y otro que opera como un intermediario entre los conglomerados de PPD, PS y PDC. El grafo medio de esta red es de 37,267, su di\'ametro cuatro y su densidad 0,313.}
+
+\justify{Finalmente, en el grafo 6 se acent\'ua la preponderancia del cl\'uster de la UDI que se conecta, a trav\'es de ciertos {\itshape nodos}, con los conglomerados del PDC, PPD y PS. Si bien el conglomerado de RN se puede identificar con mayor facilitad que en el grafo anterior con el algoritmo Fruchterman y Reingold, la aplicaci\'on de ForceAtlas2 permite apreciar patrones con mayor facilidad mediante una inspecci\'on visual. El grafo medio es de 32,450, el di\'ametro de la red de cinco y la densidad de 0,273.}
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{labelformat=empty}
+  \centering
+  \smallskip\noindent\small Grafo 6 \\ Legislatura 2010-2014
+  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{figures/FR-2010}}
+  \subfloat[ForceAtlas2]{\includegraphics[width=.49\linewidth]{figures/FA2-2010}}
+  %% \caption{}
+  %% \label{fig:fullfig}
+  \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versi\'on se utilizan colores para indicar militancia pol\'itica: UDI azul purp\'ureo, PDC malaquita, RN tomate, PPD violeta, PS anaranjado, IND malva, PRSD carmes\'i y PRI verde oscuro.\\
+  Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
+\end{figure}
+
+\subsection[ForceAtlas2 con algoritmo de modularidad] {ForceAtlas2 con algoritmo de modularidad}
+
+\justify{Indicadores b\'asicos, como la densidad, permiten apreciar que la cantidad de v\'inculos decae desde la segunda legislatura. Al comparar la red m\'as densa (grafo 2), con la de menor densidad (grafo 6), se aprecia una disminuci\'on del 24\% en el indicador. Sin embargo, otras mediciones m\'as sofisticadas, como el algoritmo de modularidad presentado en el apartado metodol\'ogico, permiten evaluar la solidez de las conexiones entre los {\itshape nodos} de un mismo conglomerado o m\'odulo. A mayor modularidad, existen conexiones m\'as s\'olidas dentro del cl\'uster y menor cantidad de v\'inculos con {\itshape alters} de otros m\'odulos.}
+
+\justify{En este sentido, con la aplicaci\'on del algoritmo de modularidad se obtiene que $\Delta Q$(grafo 1) = 0,354; $\Delta Q$(grafo 2) = 0,375; $\Delta Q$(grafo 3) = 0,372; $\Delta Q$(grafo 4) = 0,416; $\Delta Q$(grafo 5) = 0,414; y $\Delta Q$(grafo 6) = 0,409. Con el algoritmo tambi\'en es posible identificar un n\'umero espec\'ifico de comunidades, lo que permite un an\'alisis m\'as detallado de la red. En la primera legislatura se pueden identificar 13 comunidades, en la segunda y tercera ocho, en la cuarta nueve y en las dos \'ultimas legislaturas solo siete comunidades. Esta es una evidencia mucho m\'as precisa que complementa que no solo existen legislaturas menos densas, en t\'erminos de composici\'on social, adem\'as, el n\'umero de cl\'usteres comienza a descender. Esto se puede asociar a legislaturas m\'as homog\'eneas.}
+
+\section[Discusi\'on] {{\normalfont Discusi\'on}}
+
+\justify{En los seis grafos usados para analizar las legislaturas entre 1990 y 1994 en Chile, la aplicaci\'on del algoritmo ForceAtlas2 ofrece una mejor visualizaci\'on y adem\'as permite apreciar de mejor forma los conglomerados que se conforman. Esto ayuda a evitar problemas de interpretaci\'on con respecto a patrones identificables en las redes. Por otra parte, el algoritmo de modularidad permite evaluar con precisi\'on la solidez de las conexiones dentro de los cl\'usteres y delimitar su conformaci\'on a un nivel m\'as desagregado que con una inspecci\'on visual simple.}
+
+\justify{Esto ayuda a delinear futuras l\'ineas de investigaci\'on que busquen realizar un an\'alisis m\'as espec\'ifico de las conexiones y la conformaci\'on de conglomerados y, de esta forma, evaluar que tan cerrada o abierta es la \'elite de un pa\'is en un momento hist\'orico determinado.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{{\normalfont Referencias}}
+
+\begin{list}{}%
+{\leftmargin=1em \itemindent=-1em}
+
+\item{\small Blondel, V. D., Guillaume, J.-L., Lambiotte, R., {\itshape \&} Lefebvre, E. (2008). Fast unfolding of communities in large networks. {\itshape Journal of Statistical Mechanics: Theory and Experiment}, (P10008), 1-12.}
+
+\item{\small Brandes, U. (2001). A Faster Algorithm for Betweenness Centrality. {\itshape Journal of Mathematical Sociology, 25}(2), 163-177.}
+
+\item{\small Bunker, K., {\itshape \&} Navia, P. (2015). Incumbency Advantage and Tenure Length in the Chilean Chamber of Deputies, 1989-2009. {\itshape Revista de Ciencia Pol\'itica, 35}(2), 251-271.}
+
+\item{\small Eades, P. D. (1984). A heuristic for graph drawing. {\itshape Congressus Nutnerantiunt, 42}, 149-160.}
+
+\item{\small Friedkin, N. E. (1981). The development of structure in random networks: an analysis of the effects of increasing network density on five measures of structure. {\itshape Social Networks, 3}(1), 41-52.}
+
+\item{\small Fruchterman, T. M. J., {\itshape \&} Reingold, E. M. (1991). Graph drawing by force-directed placement. {\itshape Software: Practice and Experience, 21}(11), 1129-1164.}
+
+\item{\small Gonz\'alez-Bustamante, B. (2014). Elecci\'on directa de consejeros regionales 2013. Rendimiento del capital pol\'itico, familiar y econ\'omico en una nueva arena electoral en Chile. {\itshape Pol\'itica, Revista de Ciencia Pol\'itica, 52}(2), 49-91.}
+
+\item{\small Gonz\'alez-Bustamante, B., {\itshape \&} Cisternas, C. (2016). \'Elites pol\'iticas en el poder legislativo chileno: La C\'amara de Diputados (1990-2014). {\itshape Pol\'itica, Revista de Ciencia Pol\'itica, 54}(1), 19-52.}
+
+\item{\small Gonz\'alez-Bustamante, B., {\itshape \&} Olivares, A. (2015). Rotaci\'on de subsecretarios en Chile: Una exploraci\'on de la segunda l\'inea gubernamental, 1990-2014. {\itshape Revista de Gesti\'on P\'ublica, IV}(2), 151-190.}
+
+\item {\small Gonz\'alez-Bustamante, B., {\itshape \&} Olivares, A. (2018). La \'elite pol\'itica gubernamental en Chile: supervivencia de ministros (1990-2014). En A. Codato \& F.
+Espinoza (eds.),{ \itshape Las \'Elites en las Am\'ericas: Diferentes Perspectivas}. Curitiba: Editora Universidade Federal do Paran\'a.}
+
+\item {\small Gonz\'alez-Bustamante, B., {\itshape \&} Soto, D. (2016). Pluralismo en los medios digitales escritos en Chile, una exploraci\'on de casos clave. {\itshape Serie Pol\'itica, Gesti\'on y Pol\'iticas P\'ublicas}, (2), 1-26.}
+
+\item{\small Hanneman, R. A., {\itshape \&} Riddle, M. (2005). {\itshape Introduction to Social Networks Methods}. Riverside: University of California Riverside.}
+
+\item{\small Jacomy, M., Venturini, T., Heymann, S., {\itshape \&} Bastian, M. (2014). ForceAtlas2, a Continuous Graph Layout Algorithm for Handy Network Visualization Designed for the Gephi Software. {\itshape PLoS ONE, 9}(6), 1-12.}
+
+\item{\small Joignant, A. (2014). El capital pol\'itico familiar: Ventajas de parentela y concentraciones de mercado en las elecciones generales chilenas 2013. {\itshape Pol\'itica, Revista de Ciencia Pol\'itica, 52}(2), 13-48.}
+
+\item{\small Maillet, A., Gonz\'alez-Bustamante, B., {\itshape \&} Olivares, A. (2016). ?`Puerta giratoria? An\'alisis de la circulaci\'on p\'ublico-privada en Chile (2000-2014). {\itshape Serie de Documentos de Trabajo PNUD-Desigualdad}, (7),  1-40.}
+
+\item {\small Newman, M. E. J., {\itshape \&} Girvan, M. (2004). Finding and evaluating community structure in networks. {\itshape Physical Review E, 69}(2), 026113-1-026113-15.}
+
+\item {\small Noack, A. (2007a). Energy Models for Graph Clustering. {\itshape Journal of Graph Algorithms and Applications, 11}(2), 453-480.}
+
+\item {\small Noack, A. (2007b). {\itshape Unified Quality Measures for Clusterings, Layouts, and Orderings of Graphs, and Their Application as Software Design Criteria}. (Ph. D. Tesis), Brandenburg University of Technology.}
+
+\item {\small Noack, A. (2009). Modularity clustering is force-directed layout. {\itshape Physical Review E, 79}(2), 026102-2-026102-8.}
+
+\item {\small Salda\~na, J. (2014). Carreras pol\'iticas de los diputados chilenos, 1989-2013: evoluci\'on y sus consecuencias para la representaci\'on pol\'itica del pa\'is. {\itshape Pol\'itica, Revista de Ciencia Pol\'itica, 52}(2), 127-155.}
+
+\item {\small Valenzuela, S., {\itshape \&} Arriagada, A. (2009). Competencia por la uniformidad en noticieros y diarios chilenos 2000-2005. {\itshape Cuadernos.info}, (24), 41-52.}
+
+\item {\small Wasserman, S., {\itshape \&} Faust, K. (1994). {\itshape Social Network Analysis: Methods and Applications}. Nueva York: Cambridge University Press.}
+\end{list}
+
+\vspace{8mm}
+\section[Revisión]{\LARGE \itshape Informe abierto de revisi\'on}
+
+\vspace{8mm}
+{\noindent {\Large Rodrigo Cuevas}\footnote{Docente, Escuela de Postgrado, Instituto de Asuntos Públicos, Universidad de Chile} \\
+\vspace{1mm}{\normalsize Universidad de Chile} \\
+\vspace{1mm}{\LARGE \Letter} \href{mailto:email@email.com}{\textcolor{blue}{\normalsize email@email.com}}}
+\vspace{8mm}
+
+\justify{\textcolor{red}{\lipsum[1]}}
+
+\justify{\textcolor{red}{\lipsum[1]}}
+
+\justify{\textcolor{red}{\lipsum[1]}}
+
+\justify{\textcolor{red}{\lipsum[1]}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
