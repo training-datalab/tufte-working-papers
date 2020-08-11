@@ -199,7 +199,6 @@
 \begin{table*}[h]
   \centering
   \fontfamily{ppl}\selectfont
-  %% \stepcounter{figure}
    \smallskip\noindent\small Tabla 1 (Parte 1/2) \\ Regresiones logísticas agrupadas para participación y compromiso político, América Latina 2016/17  \\~\\
   \begin{tabular}{l c c c c c c}
     \toprule
@@ -230,25 +229,21 @@
     \multirow{2}{*}{SLV} & & & & & & \\
     & & & & & & \\
     \multirow{2}{*}{GTM} & & & & & & \\
-    & & & & & & \\
-    \multirow{2}{*}{HTI} & & & & & & \\
     & & & & & & \\ \bottomrule
   \end{tabular}
-  \\~\\ \smallskip\noindent\scriptsize $\dagger$ $p \leq 0,1$ | $\star$ $p \leq 0,05$ | $\star\star$ $p \leq 0,01$ | $\star\star\star$ $p \leq 0,001$  \\ Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, www.LapopSurveys.org. 
-  %% \caption{}
-  %% \label{tab:muestra}
-  %% \zsavepos{pos:normaltab}
+  \\~\\ \smallskip\noindent\scriptsize $\dagger$ $p \leq 0,1$ | $\star$ $p \leq 0,05$ | $\star\star$ $p \leq 0,01$ | $\star\star\star$ $p \leq 0,001$  \\ Nota: Se reportan coeficientes $\beta$ y errores estándar entre paréntesis. Se aplica un ajuste para modelos con muestras complejas con el estimador de varianza Taylor linealizado considerando los estratos de la muestra ({\itshape strata}), las unidades primarias de muestreo ({\itshape PSUs}) y el factor de expansión muestral estandarizado para comparabilidad entre países ({\itshape weight1500}). Se reporta McKelvey y Zavoina $R^2$. \\ Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, \href{https://www.vanderbilt.edu/lapop/}{\textcolor{blue}{www.LapopSurveys.org}}.
 \end{table*}
 
 \begin{table*}[h]
   \centering
   \fontfamily{ppl}\selectfont
-  %% \stepcounter{figure}
    \smallskip\noindent\small Tabla 1 (Parte 2/2) \\ Regresiones logísticas agrupadas para participación y compromiso político, América Latina 2016/17 \\~\\
   \begin{tabular}{l c c c c c c}
     \toprule
      & VB2 & PROT3 & EFF1 & VB10 & POL1 & GI0 \\ \midrule
     \multicolumn{7}{c}{Países} \\ \midrule
+    \multirow{2}{*}{HTI} & & & & & & \\
+    & & & & & & \\ 
     \multirow{2}{*}{HND} & & & & & & \\
     & & & & & & \\
     \multirow{2}{*}{MEX} & & & & & & \\
@@ -274,10 +269,7 @@
     $N$ ({\itshape PSUs}) & & & & & & \\ \midrule
     {\itshape Pseudo}-$R^2$ & & & & & & \\ \bottomrule
   \end{tabular}
-  \\~\\ \smallskip\noindent\scriptsize $\dagger$ $p \leq 0,1$ | $\star$ $p \leq 0,05$ | $\star\star$ $p \leq 0,01$ | $\star\star\star$ $p \leq 0,001$  \\ Nota: Se reportan coeficientes $\beta$ y errores estándar entre paréntesis. Se aplica un ajuste para modelos con muestras complejas con el estimador de varianza Taylor linealizado considerando los estratos de la muestra ({\itshape strata}), las unidades primarias de muestreo ({\itshape PSUs}) y el factor de expansión muestral estandarizado para comparabilidad entre países ({\itshape weight1500}). Se reporta McKelvey y Zavoina $R^2$. \\ Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, www.LapopSurveys.org. 
-  %% \caption{}
-  %% \label{tab:muestra}
-  %% \zsavepos{pos:normaltab}
+  \\~\\ \smallskip\noindent\scriptsize $\dagger$ $p \leq 0,1$ | $\star$ $p \leq 0,05$ | $\star\star$ $p \leq 0,01$ | $\star\star\star$ $p \leq 0,001$  \\ Nota: Se reportan coeficientes $\beta$ y errores estándar entre paréntesis. Se aplica un ajuste para modelos con muestras complejas con el estimador de varianza Taylor linealizado considerando los estratos de la muestra ({\itshape strata}), las unidades primarias de muestreo ({\itshape PSUs}) y el factor de expansión muestral estandarizado para comparabilidad entre países ({\itshape weight1500}). Se reporta McKelvey y Zavoina $R^2$. \\ Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, \href{https://www.vanderbilt.edu/lapop/}{\textcolor{blue}{www.LapopSurveys.org}}.
 \end{table*}
 
 \justify{El primer modelo muestra que el conocimiento político aumenta la probabilidad de participar electoralmente (OR = 1,262; CI95\% = 1,225; 1,302), lo mismo ocurre con la edad (OR = 1,054; CI95\% = 1,052; 1,057). Por otra parte, ser hombre (OR = 0,900; CI95\% = 0,852; 0,951) y vivir en zonas urbanas (OR = 0,842; CI95\% = 0,785; 0,904) disminuyen las probabilidades de participar electoralmente.}
@@ -304,8 +296,6 @@
    \subfloat[VB10]{\includegraphics[width=.30\linewidth]{figures/logit-id-part}}
    \subfloat[POL1]{\includegraphics[width=.30\linewidth]{figures/logit-int}}
    \subfloat[GI0]{\includegraphics[width=.30\linewidth]{figures/logit-medios}}
-  %% \caption{}
-  %% \label{fig:fullfig}
   \\ \smallskip\noindent\scriptsize Nota: Se utiliza Chile como país de referencia. \\ Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, \href{https://www.vanderbilt.edu/lapop/}{\textcolor{blue}{www.LapopSurveys.org}}.
 \end{figure*}
 
@@ -329,14 +319,54 @@
    \subfloat[VB10]{\includegraphics[width=.30\linewidth]{figures/margin-id-part}}
    \subfloat[POL1]{\includegraphics[width=.30\linewidth]{figures/margin-int}}
    \subfloat[GI0]{\includegraphics[width=.30\linewidth]{figures/margin-medios}}
-  %% \caption{}
-  %% \label{fig:fullfig}
   \\ \smallskip\noindent\scriptsize Nota. Se utiliza Chile como país de referencia. Otras variables {\itshape céteris páribus}. \\ Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, \href{https://www.vanderbilt.edu/lapop/}{\textcolor{blue}{www.LapopSurveys.org}}.
 \end{figure*}
 
 \subsection[Modelos de efectos mixtos de dos niveles] {Modelos de efectos mixtos de dos niveles}
 
 \justify{A continuación, en la tabla 3, se presentan los modelos de efectos mixtos. En el modelo de participación electoral se puede apreciar que el conocimiento político aumenta su probabilidad de ocurrencia (OR = 1,262; CI95\% = 1,225; 1,299), de la misma forma que la edad (OR = 1,054; CI95\% = 1,052; 1,056). De forma opuesta, ser hombre (OR = 0,921; CI95\% = 0,871; 0,974) y vivir en zonas urbanas (OR = 0,842; CI95\% = 0,791; 0,897) disminuyen la participación electoral. El modelo de efectos mixtos ratifica los resultados del modelo logístico, de hecho, la razón de momios de las variables significativas varía en promedio solo un 0,58\%.}
+
+\begin{table*}[h]
+  \centering
+  \fontfamily{ppl}\selectfont
+   \smallskip\noindent\small Tabla 3 \\ Regresiones logísticas de efectos mixtos para participación y compromiso político, América Latina 2016/17 \\~\\
+  \begin{tabular}{l c c c c c c}
+    \toprule
+     & VB2 & PROT3 & EFF1 & VB10 & POL1 & GI0 \\ \midrule
+    \multicolumn{7}{c}{Control} \\ \midrule
+    \multirow{2}{*}{Q1} & & & & & \\
+    & & & & & & \\ 
+    \multirow{2}{*}{Q2} & & & & & & \\
+    & & & & & & \\
+    \multirow{2}{*}{UR} & & & & & & \\
+    & & & & & & \\ \midrule
+    \multicolumn{7}{c}{Sofisticación} \\ \midrule
+    \multirow{2}{*}{CONOC.} & & & & & & \\
+    & & & & & & \\ \midrule
+    \multirow{2}{*}{Constante} & & & & & & \\
+    & & & & & & \\ \midrule
+    \multicolumn{7}{c}{Efectos aleatorios} \\ \midrule    
+    \multirow{2}{*}{País} & & & & & & \\
+    & & & & & & \\ \midrule
+    LL & & & & & & \\ \midrule
+    $N$ & & & & & & \\ \midrule
+    AIC & & & & & & \\
+    BIC & & & & & & \\ \bottomrule
+  \end{tabular}
+  \\~\\ \smallskip\noindent\scriptsize $\dagger$ $p \leq 0,1$ | $\star$ $p \leq 0,05$ | $\star\star$ $p \leq 0,01$ | $\star\star\star$ $p \leq 0,001$  \\ Nota: Se reportan coeficiente beta y errores estándar entre paréntesis. Para los efectos aleatorios el anidamiento en segundo nivel es por país y se indica la significancia de la prueba de contraste entre efectos fijos y aleatorios.\\ Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, \href{https://www.vanderbilt.edu/lapop/}{\textcolor{blue}{www.LapopSurveys.org}}.
+\end{table*}
+
+\justify{En el modelo de participación en protestas el conocimiento político también tiene un efecto positivo (OR = 1,306; CI95\% = 1,256; 1,358), lo mismo ocurre con ser hombre (OR = 1,157; CI95\% = 1,074; 1,246). La edad tiende un efecto inverso: a mayor edad, menores probabilidades de manifestar (OR = 0,992; CI95\% = 0,990; 0,995). La zona de residencia, al igual que en el modelo logístico agrupado, no es estadísticamente significativa (p = 0,912). La variación promedio de las probabilidades de las variables significativas entre el modelo logístico y el de efectos mixtos es de un 9,56\%, principalmente porque el conocimiento político aumenta en un 26,55\%.}
+
+\justify{Por otra parte, al igual que en el modelo logístico, el conocimiento político disminuye la eficacia (OR = 0,913; CI95\% = 0,890; 0,936), lo mismo aplica para residir en zonas urbanas (OR = 0,896; CI95\% = 0,849; 0,946). La edad, en cambio, aumenta la eficacia (OR = 1,006; CI95\% = 1,005; 1,008). El sexo del individuo no resulta ser una variable estadísticamente significativa (p = 0,140). También se mantienen los mismos patrones del modelo logístico con una variación mínima, solo de un 0,84\%.}
+
+\justify{Con respecto a la identificación partidaria, el conocimiento aumenta sus probabilidades (OR = 1,232; CI95\% = 1,198; 1,267), lo mismo ocurre en el modelo logístico. Otras variables que son predictores de identificación con los partidos son ser hombre (OR = 1,299; CI95\% = 1,230; 1,372) y la edad (OR = 1,017; CI95\% = 1,016; 1,019), patrones que también se advierten en la regresión logística. Vivir en zonas urbanas, por otra parte, disminuye las probabilidades de identificación partidaria (OR = 0,820; CI95\% = 0,771; 0,872). La variación entre el modelo logístico y el de efectos mixtos es solo de un 0,42\% para las variables significativas.}
+
+\justify{El conocimiento político también aumenta el interés en la política (OR = 1,490; CI95\% = 1,451; 1,530), también ocurre este efecto con ser hombre (OR = 1,225; CI95\% = 1,166; 1,287). Por otro lado, mientras la edad disminuye el interés (OR = 0,989; CI95\% = 0,987; 0,990), vivir en zonas urbanas o rurales resulta irrelevante (p = 0,519). Estos son los mismos resultados que arrojó el modelo logístico para interés en la política. Se advierte una variación promedio de un 0,75\%.}
+
+\justify{Finalmente, el conocimiento político también constituye un predictor de consumo de medios (OR = 1,331; CI95\% = 1,298; 1,365), al igual que la edad (OR = 1,024; CI95\% = 1,022; 1,026) y vivir en zonas urbanas (OR = 1,319; CI95\% = 1,250; 1,392). El sexo no resulta ser una variable significativa (p = 0,076). Se advierten los mismos patrones que en el modelo logístico y la variación promedio de las variables significativas es solo de un 0,50\% negativo ya que la razón de momios de la residencia disminuye en un 1,79\% con respecto al modelo logístico.}
+
+\justify{A continuación, en el gráfico 5, se grafica el logaritmo de las razones de momios por país para evaluar el efecto del conocimiento político en cada modelo de efectos mixtos: participación electoral (p = 0,000), participación en protestas (p = 0,000), eficacia política (p = 0,000), identificación partidaria (p = 0,000), interés en la política (p = 0,000) y consumo de medios (p = 0,000). El efecto es inverso solo en eficacia política, al igual que en los modelos logísticos agrupados de un nivel.}
 
 \section[Discusi\'on] {{\normalfont Discusi\'on}}
 
