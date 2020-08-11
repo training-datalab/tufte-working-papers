@@ -1,0 +1,33 @@
+\section{{\normalfont CRediT}}
+
+{\noindent {\bfseries Bastián González-Bustamante} (autor)}
+
+{\noindent {\includegraphics[width=.085\linewidth]{../../badges/conceptualization} {\includegraphics[width=.085\linewidth]{../../badges/data_curation} {\includegraphics[width=.085\linewidth]{../../badges/formal_analysis} {\includegraphics[width=.085\linewidth]{../../badges/funding_acquisition} {\includegraphics[width=.085\linewidth]{../../badges/methodology}  {\includegraphics[width=.085\linewidth]{../../badges/computation} {\includegraphics[width=.085\linewidth]{../../badges/testing} {\includegraphics[width=.085\linewidth]{../../badges/data_visualization} {\includegraphics[width=.085\linewidth]{../../badges/writing_initial_draft}
+{\includegraphics[width=.085\linewidth]{../../badges/writing_review}}\\
+
+{\noindent {\bfseries Antoine Maillet} (comentarista)}
+
+{\noindent {\includegraphics[width=.085\linewidth]{../../badges/writing_review}}\\
+
+{\noindent {\bfseries TBC} (evaluador)}
+
+{\noindent {\includegraphics[width=.085\linewidth]{../../badges/writing_review}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{8mm}
+\section[Revisión]{\LARGE \itshape Informe abierto de revisi\'on}
+
+\vspace{8mm}
+{\noindent {\Large TBC}\footnote{Biografía} \\
+{\normalsize TBC} \\
+\vspace{1mm}{\LARGE \Letter} \href{mailto:email@email.com}{\textcolor{blue}{\normalsize email@email.com}}}
+\vspace{8mm}
+
+\justify{\textcolor{red}{\lipsum[1]}}
+
+\justify{\textcolor{red}{\lipsum[1]}}
+
+\justify{\textcolor{red}{\lipsum[1]}}
+
+\justify{\textcolor{red}{\lipsum[1]}}
