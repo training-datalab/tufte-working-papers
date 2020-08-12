@@ -131,7 +131,7 @@
     & & la semana; (3) algunas veces al mes; (4) rara & \\
     & & vez; (5) nunca. & \\ \bottomrule
   \end{tabular}
-  \\~\\ \smallskip\noindent\scriptsize Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, www.LapopSurveys.org.
+  \\~\\ \smallskip\noindent\scriptsize Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, \href{https://www.vanderbilt.edu/lapop/}{\textcolor{blue}{www.LapopSurveys.org}}.
   %% \caption{}
   %% \label{tab:muestra}
   %% \zsavepos{pos:normaltab}
@@ -368,7 +368,49 @@
 
 \justify{A continuación, en el gráfico 5, se grafica el logaritmo de las razones de momios por país para evaluar el efecto del conocimiento político en cada modelo de efectos mixtos: participación electoral (p = 0,000), participación en protestas (p = 0,000), eficacia política (p = 0,000), identificación partidaria (p = 0,000), interés en la política (p = 0,000) y consumo de medios (p = 0,000). El efecto es inverso solo en eficacia política, al igual que en los modelos logísticos agrupados de un nivel.}
 
+\begin{figure*}[h!]
+\captionsetup[subfigure]{labelformat=empty}
+  \centering
+  \smallskip\noindent\small Figura 5 \\ Log-odds predichos de conocimiento político para participación y compromiso político, América Latina 2016/17
+  \subfloat[VB2]{\includegraphics[width=.30\linewidth]{figures/log-OR-part}}
+  \subfloat[PROT3]{\includegraphics[width=.30\linewidth]{figures/log-OR-prot}}
+  \subfloat[EFF1]{\includegraphics[width=.30\linewidth]{figures/log-OR-eff}}\\
+   \subfloat[VB10]{\includegraphics[width=.30\linewidth]{figures/log-OR-id-part}}
+   \subfloat[POL1]{\includegraphics[width=.30\linewidth]{figures/log-OR-int}}
+   \subfloat[GI0]{\includegraphics[width=.30\linewidth]{figures/log-OR-medios}}
+  \\ \smallskip\noindent\scriptsize Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, \href{https://www.vanderbilt.edu/lapop/}{\textcolor{blue}{www.LapopSurveys.org}}.
+\end{figure*}
+
+\justify{La propensión para las distintas variables de participación y compromiso político están expresadas en los efectos fijos de los modelos de efectos mixtos: participación electoral ($\beta_0$ = -1,423; CI95\% = -1,739; -1,107), en protestas ($\beta_0$ = -2,869; CI95\% = -3,139; -2,600), eficacia política ($\beta_0$ = -0,516; CI95\% = -0,686; -0,346), identificación partidaria ($\beta_0$ = -2,496; CI95\% = -2,805; -2,186), interés en la política (($\beta_0$ = -1,664; CI95\% = -1,838; -1,491) y consumo de medios ($\beta_0$ = -1,552; CI95\% = -1,722; -1,383). Todos altamente significativos (p = 0,000).}
+
+\justify{Al efecto fijo se añade la perturbación aleatoria entre los distintos países que presenta las siguientes varianzas: participación electoral ($\sigma_{u}^{2}$ = 0,414; CI95\% = 0,218; 0,786), en protestas ($\sigma_{u}^{2}$ = 0,216; CI95\% = 0,111; 0,423), eficacia política ($\sigma_{u}^{2}$ = 0,088; CI95\% = 0,046; 0,170), identificación partidaria ($\sigma_{u}^{2}$ = 0,399; CI95\% = 0,209; 0,761), interés en la política ($\sigma_{u}^{2}$ = 0,087; CI95\% = 0,045; 0,169) y consumo de medios ($\sigma_{u}^{2}$ = 0,084; CI95\% = 0,044; 0,162). Además, todas las pruebas de contraste entre efectos fijos y aleatorios fueron estadísticamente significativas de forma robusta (p = 0,000).}
+
+\justify{A continuación, en el gráfico 6, se representan los efectos del nivel país para cada modelo de efectos mixtos, los cuales ratifican las tendencias detectadas en los efectos marginales de las variables {\itshape dummies} de países en los modelos logísticos.}
+
+\begin{figure*}[h!]
+\captionsetup[subfigure]{labelformat=empty}
+  \centering
+  \smallskip\noindent\small Figura 6 \\ Efectos aleatorios en torno a la constante por país, América Latina 2016/17
+  \subfloat[VB2]{\includegraphics[width=.30\linewidth]{figures/random-part}}
+  \subfloat[PROT3]{\includegraphics[width=.30\linewidth]{figures/random-prot}}
+  \subfloat[EFF1]{\includegraphics[width=.30\linewidth]{figures/random-eff}}\\
+   \subfloat[VB10]{\includegraphics[width=.30\linewidth]{figures/random-id-part}}
+   \subfloat[POL1]{\includegraphics[width=.30\linewidth]{figures/random-int}}
+   \subfloat[GI0]{\includegraphics[width=.30\linewidth]{figures/random-medios}}
+  \\ \smallskip\noindent\scriptsize Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, \href{https://www.vanderbilt.edu/lapop/}{\textcolor{blue}{www.LapopSurveys.org}}.
+\end{figure*}
+
 \section[Discusi\'on] {{\normalfont Discusi\'on}}
+
+\justify{El análisis descriptivo y correlacional permite ver que El Salvador, Panamá y Uruguay tienen los mayores niveles de sofisticación política de la región. En el extremo opuesto es posible ubicar a Ecuador, México y Haití. Por otra parte, al usar las estimaciones puntuales ponderadas de las muestras nacionales como indicadores agregados, la única relación estadísticamente significativa identificable es entre sofisticación política y consumo de medios.}
+
+\justify{Los modelos logísticos muestran distintas relaciones entre las variables analizadas que son confirmadas con el análisis multinivel. Además, a través de la incorporación de variables que representan a las muestras por país en el conjunto agregado de datos, se identifican considerables efectos en ese nivel de análisis, lo que sugiere la necesidad generar un anidamiento en otro nivel. Los modelos de efectos mixtos, por su parte, muestran que la sofisticación política es significativa de forma robusta para todas las variables dependientes evaluadas con un efecto positivo, con excepción de la eficacia política donde se advierte un efecto inverso: a mayor sofisticación, menor eficacia. Si bien esto es teóricamente sostenible ya que, a mayor conocimiento, podría, en efecto, existir una percepción de que los gobernantes no se interesan por lo que piensa la mayoría de la ciudadanía, también puede deberse al criterio de recodificación utilizado.}
+
+\justify{Con respecto a las variables de control se advierte que los hombres tienen mayores probabilidades de participar en protestas, identificarse con un partido y sentir interés por la política. Las mujeres, en cambio, tienen mayores probabilidades de participar en procesos electorales. Por otra parte, la edad aumenta las probabilidades de participación electoral, eficacia política, identificación y consumo de medios, en cambio disminuye las de participar en protestas e interesarse en la política. Por último, vivir en zonas urbanas aumenta las probabilidades de consumo de medios, mientras que residir en zonas rurales aumenta las probabilidades de votar, eficacia política y sentir identificación con un partido político.}
+
+\justify{Por otra parte, se advierte que los modelos de efectos mixtos presentan las mismas relaciones estadísticas que los logísticos con una variabilidad de probabilidades promedio que se mueve entre -0,50\% y +9,56\% para las variables significativas. En estos modelos, los efectos fijos sugieren una propensión negativa para todas las variables de participación y compromiso político y además muestran que la mayor perturbación aleatoria entre países se advierte en la participación electoral e identificación partidaria. Por otro lado, la varianza más baja a nivel comparado se advierte en eficacia política, interés por la política y consumo de medios.}
+
+\justify{En síntesis, la nueva medición de sofisticación política constituye un predictor robusto para distintas variables de participación y compromiso político que se han evaluado con la última ola del Barómetro de las Américas 2016/17 en 19 países de América Latina. Aun así, esta investigación en progreso tiene trabajo futuro pendiente que se puede resumir principalmente en dos temas. Primero, la incorporación de variables asociadas al nivel socioeconómico, aunque en estricto rigor la sofisticación política debiese representar teóricamente aquella dimensión. Una posibilidad es la construcción de un índice más complejo de sofisticación que incorpore variables de recursos sociales. Segundo, la incorporación de variables institucionales que podrían ser importantes para ciertos fenómenos, por ejemplo, el tipo de régimen de votación para la participación electoral.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -377,7 +419,76 @@
 \begin{list}{}%
 {\leftmargin=1em \itemindent=-1em}
 
-\item{\small Maillet, A., Gonz\'alez-Bustamante, B., {\itshape \&} Olivares, A. (2016). ?`Puerta giratoria? An\'alisis de la circulaci\'on p\'ublico-privada en Chile (2000-2014). {\itshape Serie de Documentos de Trabajo PNUD-Desigualdad}, (7),  1-40.}
+\item{\small Akaike, H. (1973). Information Theory and an Extension of the Maximum Likelihood Principle. En B. N. Petrov {\itshape \&} F. Csáki (eds.), {\itshape Proceedings of the Second International Symposium on Information Theory}. Budapest: Akademiai Kiado.}
+
+\item{\small Almond, G. A., {\itshape \&} Verba, S. (1980). {\itshape The Civic Culture Revisited}. Boston: Little Brown.}
+
+\item{\small Arriagada, A., Navia, P., {\itshape \&} Schuster, M. (2010). ¿Consumo luego pienso, o pienso y luego consumo? Consumo de medios, predisposición política, percepción económica y aprobación presidencial. {\itshape Revista de Ciencia Política, 30}(3), 669-695.}
+
+\item{\small Bargsted, M., Valenzuela, S., De La Cerda, N., {\itshape \&} Mackenna, B. (2015). Participación ciudadana en las elecciones municipales del 2012: Diagnóstico y propuestas en torno al sistema de voto voluntario. En {\itshape Condicionantes de la participación electoral en Chile}. Santiago: Programa de las Naciones Unidas para el Desarrollo.}
+
+\item{\small Calderón, C., {\itshape \&} Ximénez, C. (2014). Análisis factorial de ítems de respuesta forzada: una revisión y un ejemplo. {\itshape Revista Latinoamericana de Psicología, 46}(1), 24-34.}
+
+\item{\small Cameron, A. C., {\itshape \&} Trivedi, P. K. (2010). {\itshape Microeconometrics Using Stata}. College Station: Stata Press.}
+
+\item{\small Cebolla, H. (2013). {\itshape Introducción al análisis multinivel. Colección Cuadernos Metodológicos, núm. 49}. Madrid: Centro de Investigaciones Sociológicas.}
+
+\item{\small Cohen, M. J., {\itshape \&} Zechmeister, E. J. (2018). Medición del conocimiento político con el Barómetro de las Américas. {\itshape Nota Metodológica}, (3), 1-17.}
+
+\item{\small Corvalán, A., {\itshape \&} Cox, P. (2013). Class-biased Electoral Participation: The Youth Vote in Chile. {\itshape Latin American Politics and Society, 55}(3), 47-68.}
+
+\item{\small Corvalán, A., Cox, P., {\itshape \&} Hernández, C. (2015). Evaluando los determinantes de la participación electoral en Chile: sobre el uso de datos individuales y el sobre-reporte en encuestas. En {\itshape Condicionantes de la participación electoral en Chile}. Santiago: Programa de las Naciones Unidas para el Desarrollo.}
+
+\item{\small Dalton, R. J. (1988). {\itshape Citizen Politics in Western Democracies: Public Opinion and Political Parties in the United States, Great Britain, West Germany, and France}. Chatham: Chatham House.}
+
+\item{\small Demidenko, E. (2004). {\itshape Mixed Models: Theory and Applications}. Hoboken: Wiley.}
+
+\item{\small Freese, J., {\itshape \&} Long, J. S. (2006). {\itshape Regression Models for Categorical Dependent Variables Using Stata}. College Station: Stata Press.}
+
+\item{\small Greene, W. H. (2012). {\itshape Econometric Analysis. 7th ed}. Upper Saddle River: Prentice Hall.}
+
+\item{\small González-Bustamante, B., {\itshape \&} Henríquez, G. (2013). Chile: la campaña digital 2009-2010. En I. Crespo {\itshape \&} J. del Rey (eds.), {\itshape Comunicación Política \& Campañas Electorales en América Latina}. Buenos Aires: Biblos.}
+
+\item{\small Long, J. S. (1997). {\itshape Regression Models for Categorical and Limited Dependent Variables}. Thousand Oaks: Sage Publications.}
+
+\item{\small Long, J. S., {\itshape \&} Freese, J. (2014). {\itshape Regression Models for Categorical Dependent Variables Using Stata. 3rd ed}. College Station: Stata Press.}
+
+\item{\small Luskin, R. C. (1987). Measuring Political Sophistication. {\itshape American Journal of Political Science, 31}(4), 856-899.}
+
+\item{\small Maillet, A., Gonz\'alez-Bustamante, B., {\itshape \&} Olivares, A. (2016). ?`Puerta giratoria? An\'alisis de la circulaci\'on p\'ublico-privada en Chile (2000-2014). {\itshape Serie de Documentos de Trabajo PNUD-Desigualdad}, (7),  1-40. \\ {\scshape doi:} \href{https://doi.org/10.13140/RG.2.2.25510.42566}{\textcolor{blue}{10.13140/RG.2.2.25510.42566}}}
+
+\item{\small McCulloch, C. E., Searle, S. R., {\itshape \&} Neuhaus, J. M. (2008). {\itshape Generalized, Linear, and Mixed Models}. Hoboken: Wiley.}
+
+\item{\small Norris, P. (2009). Political Activism: New Challenges, New Opportunities. En C. Boix {\itshape \&} S. C. Stokes (eds.), {\itshape The Oxford Handbook of Comparative Politics}. Nueva York: Oxford University Press.}
+
+\item{\small Pinheiro, J. C., {\itshape \&} Bates, D. M. (1995). Approximations to the Log-Likelihood Function in the Nonlinear Mixed-Effects Model. {\itshape Journal of Computational and Graphical Statistics, 4}(1), 12-35.}
+
+\item{\small Pinheiro, J. C., {\itshape \&} Chao, E. C. (2006). Efficient Laplacian and Adaptive Gaussian Quadrature Algorithms for Multilevel Generalized Linear Mixed Models. {\itshape Journal of Computational and Graphical Statistics, 15}(1), 58-81.}
+
+\item{\small Rabe-Hesketh, S., {\itshape \&} Skrondal, A. (2012). {\itshape Multilevel and Longitudinal Modeling Using Stata}. College Station: Stata Press.}
+
+\item{\small Raftery, A. E. (1995). Bayesian Model Selection in Social Research. {\itshape Sociological Methodology, 25}, 111-163.}
+
+\item{\small Särndal, C.-E., Swensson, B., {\itshape \&} Wretman, J. (1992). {\itshape Model Assisted Survey Sampling}. Nueva York: Springer.}
+
+\item{\small Schlozman, K. L., Verba, S., {\itshape \&} Brady, H. E. (2012). {\itshape The Unheavenly Chorus: Unequal Political Voice and the Broken Promise of American Democracy}. Princeton: Princeton University Press.}
+
+\item{\small Skinner, C. J., Holt, D., {\itshape \&} Smith, T. M. F. (1989). {\itshape Analysis of Complex Surveys}. Nueva York: Wiley.}
+
+\item{\small Smets, K., {\itshape \&} van Ham, C. (2013). The embarrassment of riches? A meta-analysis of individual-level research on voter turnout. {\itshape Electoral Studies, 32}(2), 344-359.}
+
+\item{\small Stark, S., Chernyshenko, O. S., Chan, K. Y., Lee, W. C., {\itshape \&} Drasgow, F. (2001). Effects of the testing situation on item responding: cause for concern. {\itshape Journal of Applied Psychology, 86}(5), 943-953.}
+
+\item{\small Tarrow, S. (2012). {\itshape Strangers at the Gates: Movements and States in Contentious Politics}. Nueva York: Cambridge University Press.}
+
+\item{\small Tilly, C. (2006). {\itshape Regimes and Repertories}. Chicago: The University of Chicago Press.}
+
+\item{\small Verba, S., {\itshape \&} Nie, N. H. (1972). {\itshape Participation in America: Political democracy and social equality}. Chicago: University of Chicago Press.}
+
+\item{\small Verba, S., Nie, N. H., {\itshape \&} Kim, J.-o. (1978). {\itshape Participation and Political Equality: A Seven-Nation Comparasion}. Cambridge: Cambridge University Press.}
+
+\item{\small Verba, S., Schlozman, K. L., {\itshape \&} Brady H. E. (1995). {\itshape Voice and Equality: Civic Voluntarism in American Politics}. Cambridge: Harvard University Press.}
+
 \end{list}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
