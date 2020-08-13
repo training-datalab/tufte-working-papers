@@ -75,21 +75,22 @@
 \maketitle
 
 \vspace{8mm}
-\justify{\small {\bfseries Resumen:} \marginnote{{\itshape {\bfseries Palabras clave:} }}}\\~\\
+\justify{\small {\bfseries Resumen:} Este documento de trabajo analiza la consistencia de la medición de sofisticación política como predictor de participación y compromiso político con la ola del Barómetro de las Américas 2016/17 en 19 países de América Latina ($N$ = 31.285). Se evalúan la participación electoral, en protestas, eficacia política, identificación partidaria, interés en la política y consumo de medios. Se utilizan modelos logísticos con el estimador de varianza Taylor linealizado y regresiones logísticas multinivel de efectos mixtos. Los resultados muestran que la sofisticación política es significativa de forma robusta para todas las variables dependientes evaluadas\marginnote{{\itshape {\bfseries Palabras clave:} }} con un efecto positivo, con excepción de la eficacia política que presenta un efecto inverso.}\\~\\
 
-{\noindent \LARGE \itshape }\\
+{\noindent \LARGE \itshape Sophistication, Participation, and Political Engagement in Latin America}\\
 
-\justify{\small {\bfseries Abstract:} \marginnote{{\itshape {\bfseries Keywords:} }}}
+\justify{\small {\bfseries Abstract:} This working paper analyses the consistency of the political sophistication measurement as a predictor of both political participation and engagement with the 2016/17 Americas Barometer in 19 Latin American countries (N = 31.285). Turnout, protests participation, political efficacy, partisanship, interest, and media consumption are assessed. In order to do this, maximum likelihood logit models with Taylor linearization variance estimator and mixed-effects logistic regressions are carried out. Findings show that political sophistication is robustly significant for every dependant variable assessed\marginnote{{\itshape {\bfseries Keywords:} }} with a positive effect, except for political efficacy, which presents an inverse effect.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% ~\vfill
 %% {\noindent \bfseries Nro. TBC | TBC}\\
-%% {\noindent González-Bustamante, B. (2020). Sofisticación, participación y compromiso político en América Latina. {\itshape Tufte Working Papers}, (TBC), 1-\textcolor{red}{TBC}. {\scshape doi:} \href{TBC}{\textcolor{blue}{TBC}}}\pagebreak
+%% {\noindent González-Bustamante, B. (2020). Sofisticación, participación y compromiso político en América Latina. {\itshape Tufte Working Papers}, (TBC), 1-\textcolor{red}{TBC}. {\scshape doi:} \href{TBC}{\textcolor{blue}{TBC}}}
+\pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\vspace{8mm}
+%% \vspace{8mm}
 \section[Introducci\'on] {{\normalfont Introducci\'on}\footnote{Agradezco al Proyecto de Opinión Pública de América Latina (LAPOP) y a sus principales donantes (la Agencia de los Estados Unidos para el Desarrollo Internacional, el Programa de las Naciones Unidas para el Desarrollo, el Banco Interamericano de Desarrollo y Vanderbilt University) por poner a disposición los datos utilizados en este trabajo. También agradezco los comentarios de Antoine Maillet. Esta investigación fue parcialmente financiada por el Convenio de Desempeño 2018 de la Universidad de Santiago de Chile. El autor declara no tener potenciales conflictos de interés con respecto a esta investigación.}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,7 +103,7 @@
 
 \justify{En las encuestas de opinión la sofisticación se ha medido con distintas baterías de preguntas tradicionales, principalmente a través de preguntas de conocimiento factual. Recientemente el Barómetro de las Américas 2016/17 de LAPOP ha cambiado su forma de medir conocimiento político por una aproximación más eficiente y efectiva donde es el entrevistador el que califica el nivel de conocimiento político del entrevistado. Esta nueva medición fue validada por Cohen y Zechmeister (2018) con preguntas de conocimiento factual que se mantuvieron en el cuestionario aplicado en Colombia\footnote{Las preguntas son las siguientes: GI1. ¿Cómo se llama el actual presidente de los Estados Unidos de América?; GI4. ¿Cuánto tiempo dura el período presidencial en Colombia?; y GIX4. ¿En qué continente queda Nigeria?}.}
 
-\justify{Este trabajo, aún en desarrollo, analiza la pertinencia y consistencia de la medición de sofisticación política como predictor de participación y compromiso político con la ola del Barómetro de las Américas 2016/17 en 19 países de América Latina ($N$ = 31.285). Se evalúan como formas de participación y compromiso político: participación electoral, en protestas, eficacia política, identificación partidaria, interés en la política y consumo de medios.}
+\justify{Este trabajo analiza la pertinencia y consistencia de la medición de sofisticación política como predictor de participación y compromiso político con la ola del Barómetro de las Américas 2016/17 en 19 países de América Latina ($N$ = 31.285). Se evalúan como formas de participación y compromiso político: participación electoral, en protestas, eficacia política, identificación partidaria, interés en la política y consumo de medios.}
 
 \justify{Este documento se estructura en tres apartados. En primer lugar, en el apartado método, se ofrece información sobre los datos, variables y los modelos econométricos que se utilizan. Luego se presentan los resultados de los análisis en tres subapartados: (a) descriptivo-correlacional; (b) modelos logísticos agrupados de un nivel; y (c) modelos de efectos mixtos de dos niveles. Finalmente, se presenta un breve resumen con los principales hallazgos y futuras líneas de investigación.}
 
@@ -172,14 +173,6 @@
 
 \justify{Se utilizan modelos de dos niveles por cada variable dependiente: donde para una serie de $M$ clústeres independientes, en este caso las muestras nacionales, hay también un conjunto $u_j$ de efectos aleatorios (Pinheiro y Bates, 1995; Pinheiro y Chao, 2006). En el primer nivel se modela la variable de conocimiento político y las de control, mientras que en el segundo se anida a los países. Para estos modelos solo se reporta el logaritmo de verosimilitud ({\itshape Log Likelihood}, LL) y los valores del criterio de información de Akaike (1973) ({\itshape Akaike Information Criterion}, AIC), calculado como $(-2lnL + 2k) / n$, y el criterio de información bayesiano ({\itshape Bayesian Information Criterion}, BIC; véase Raftery, 1995), calculado con $D2 - (n - k) * ln (n)$.}
 
-\begin{marginfigure}
-  \centering
-  \smallskip\noindent\small Figura 1 \\ Distribución del conocimiento político-entrevistador, América Latina 2016/17
-  \includegraphics[width=.95\linewidth]{figures/conocim}
-  \\ \smallskip\noindent\scriptsize Nota: Estimaciones puntuales ponderadas de la evaluación del conocimiento político realizada por el entrevistador. Solo se grafican las categorías “alto” y “muy alto”.\\
-  Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, \href{https://www.vanderbilt.edu/lapop/}{\textcolor{blue}{www.LapopSurveys.org}}.
-\end{marginfigure}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section[Resultados] {{\normalfont Resultados}}
@@ -189,6 +182,14 @@
 \subsection[Análisis descriptivo y correlacional] {Análisis descriptivo y correlacional}
 
 \justify{La figura 1 presenta la distribución de las categorías más elevadas ({\itshape i.e.}, “muy alto” y “alto”) de conocimiento político para los países analizados. Se aprecia que los países con mayor sofisticación política en la región son El Salvador (51,19\%), Panamá (47,86\%) y Uruguay (46,89\%). Por el contrario, los países con los valores más bajos son Ecuador (23,37\%), México (21,50\%) y Haití (18,68\%). }
+
+\begin{marginfigure}
+  \centering
+  \smallskip\noindent\small Figura 1 \\ Distribución del conocimiento político-entrevistador, América Latina 2016/17
+  \includegraphics[width=.95\linewidth]{figures/conocim}
+  \\ \smallskip\noindent\scriptsize Nota: Estimaciones puntuales ponderadas de la evaluación del conocimiento político realizada por el entrevistador. Solo se grafican las categorías “alto” y “muy alto”.\\
+  Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, \href{https://www.vanderbilt.edu/lapop/}{\textcolor{blue}{www.LapopSurveys.org}}.
+\end{marginfigure}
 
 \justify{En la figura 2 se puede apreciar la relación entre conocimiento político y las distintas variables dependientes con las cuales se trabaja a nivel agregado, es decir, considerando las estimaciones puntuales ponderadas de cada país. No se advierten relaciones estadísticamente significativas para participación electoral ($p$ = 0,194), protestas ($p$ = 0,720), eficacia política ($p$ = 0,736) e interés en la política ($p$ = 0,414). Se advierte una relación significativa positiva solo al 90\% entre conocimiento político e identificación partidaria: a mayor conocimiento, mayor identificación con los partidos ($p$ = 0,074). Por último, entre conocimiento y consumo de medios se advierte una relación estadísticamente significativa, también positiva ($R^2$ ajustado = 0,274; $F$ (1 ,17) = 7,80; $p$ = 0,013; $\beta$ = 0,477; $SD$ = 0,171; $p$ = 0,013; CI$_{95\%}$ = 0,117; 0,837; Breusch-Pagan/Cook-Weisberg = 0,810).}
 
