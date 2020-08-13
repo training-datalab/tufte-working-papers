@@ -1,67 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Tufte Working Papers (ISSN 2735-6043)
+%% Bastián González-Bustamante (ed.)
+%% https://tuftepapers.com/
+%% https://github.com/Tufte-Papers/tuftepapers.com/blob/master/LICENSE.txt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass[a4paper]{tufte-handout}
 \usepackage{marvosym}
 \usepackage[spanish]{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Sofisticación, participación y compromiso político en América Latina \thanks{Este trabajo es una versión revisada de la ponencia presentada en el VII Congreso Internacional de Comunicación Política y Estrategias de Campaña organizado por la Asociación Latinoamericana de Investigadores en Campañas Electorales (ALICE), Murcia, España, del 20 al 22 de septiembre de 2018.}
 \\~\\~\\} 
 
 \author{{\normalfont Basti\'an Gonz\'alez-Bustamante}\thanks{PRS DPhil in Politics, Department of Politics and International Relations and St Hilda's College, University of Oxford. Profesor Instructor, Departamento de Gesti\'on y Pol\'iticas P\'ublicas, Facultad de Administraci\'on y Econom\'ia, Universidad de Santiago de Chile. ORCID iD: \href{https://orcid.org/0000-0003-1510-6820}{\textcolor{blue}{0000-0003-1510-6820}}}}
 \date{{\normalfont \normalsize \vspace{-1mm}University of Oxford} \\ {\LARGE \Letter} \href{mailto:bastian.gonzalezbustamante@politics.ox.ac.uk}{\textcolor{blue}{\normalfont \normalsize bastian.gonzalezbustamante@politics.ox.ac.uk}}
-}%% \\~\\} % without \date command, current date is supplied
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \hyphenation{Latino-america-na Elecci\'on eleccio-nes ALACIP}
 
-%% \geometry{showframe} % display margins for debugging page layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{graphicx} % allow embedded images
+\usepackage{graphicx} 
   \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
-  \graphicspath{{graphics/}} % set of paths to search for images
-\usepackage{amsmath}  % extended mathematics
-\usepackage{booktabs} % book-quality tables
-\usepackage{units}    % non-stacked fractions and better unit spacing
-\usepackage{multicol} % multiple column layout facilities
-\usepackage{lipsum}   % filler text
-\usepackage{fancyvrb} % extended verbatim environments
-  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+  \graphicspath{{graphics/}} 
+\usepackage{amsmath}  
+\usepackage{booktabs} 
+\usepackage{units}
+\usepackage{multicol}
+\usepackage{lipsum} 
+\usepackage{fancyvrb} 
+  \fvset{fontsize=\normalsize}
 
-% Standardize command font styles and environments
-\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
-\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
-\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
-\newcommand{\docenv}[1]{\textsf{#1}}% environment name
-\newcommand{\docpkg}[1]{\texttt{#1}}% package name
-\newcommand{\doccls}[1]{\texttt{#1}}% document class name
-\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
-\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}
+\newcommand{\docenv}[1]{\textsf{#1}}
+\newcommand{\docpkg}[1]{\texttt{#1}}
+\newcommand{\doccls}[1]{\texttt{#1}}
+\newcommand{\docclsopt}[1]{\texttt{#1}}
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
  \pdfinfo{
    /Author (Basti\'an Gonz\'alez-Bustamante)
    /Title  (Sofisticación, participación y compromiso político en América Latina)
    Subject (Tufte Working Papers)
-   %% /Keywords (Capital pol\'itico, elecciones, gasto en campa\~nas, incumbencia, Chile.)
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \addto\captionsspanish{
-%%\def\refname{Bibliograf\'ia consultada}
 \def\tablename{Tabla}
 \def\figurename{Figura}
 }
 
-%% \usepackage[numbers]{natbib}
-%% \usepackage{cclicenses}
-
 \usepackage{subfig}
-
 \usepackage{emerald}
 \usepackage[T1]{fontenc}
-
 \usepackage{multirow} 
-
 \usepackage{hyperref}
-
 \usepackage{xcolor, colortbl}
 
-\usepackage{lipsum}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -74,8 +81,18 @@
 
 \justify{\small {\bfseries Abstract:} \marginnote{{\itshape {\bfseries Keywords:} }}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% ~\vfill
+%% {\noindent \bfseries Nro. TBC | TBC}\\
+%% {\noindent González-Bustamante, B. (2020). Sofisticación, participación y compromiso político en América Latina. {\itshape Tufte Working Papers}, (TBC), 1-\textcolor{red}{TBC}. {\scshape doi:} \href{TBC}{\textcolor{blue}{TBC}}}\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \vspace{8mm}
 \section[Introducci\'on] {{\normalfont Introducci\'on}\footnote{Agradezco al Proyecto de Opinión Pública de América Latina (LAPOP) y a sus principales donantes (la Agencia de los Estados Unidos para el Desarrollo Internacional, el Programa de las Naciones Unidas para el Desarrollo, el Banco Interamericano de Desarrollo y Vanderbilt University) por poner a disposición los datos utilizados en este trabajo. También agradezco los comentarios de Antoine Maillet. Esta investigación fue parcialmente financiada por el Convenio de Desempeño 2018 de la Universidad de Santiago de Chile. El autor declara no tener potenciales conflictos de interés con respecto a esta investigación.}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \justify{La sofisticación política, también definida como conocimiento político, tiene relación con la cantidad de temas públicos que conoce un individuo, la profundidad con la cual los maneja y su capacidad para estructurar ideas sobre estos tópicos (Luskin, 1987, véase también Cohen y Zechmesiter, 2018). La sofisticación se tiende a correlacionar de forma robusta con distintas formas convencionales y no convencionales de participación política, como también con expresiones de compromiso.}
 
@@ -92,6 +109,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section[M\'etodo] {{\normalfont M\'etodo}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection[Datos y medición] {Datos y medición}
 
@@ -153,8 +172,6 @@
 
 \justify{Se utilizan modelos de dos niveles por cada variable dependiente: donde para una serie de $M$ clústeres independientes, en este caso las muestras nacionales, hay también un conjunto $u_j$ de efectos aleatorios (Pinheiro y Bates, 1995; Pinheiro y Chao, 2006). En el primer nivel se modela la variable de conocimiento político y las de control, mientras que en el segundo se anida a los países. Para estos modelos solo se reporta el logaritmo de verosimilitud ({\itshape Log Likelihood}, LL) y los valores del criterio de información de Akaike (1973) ({\itshape Akaike Information Criterion}, AIC), calculado como $(-2lnL + 2k) / n$, y el criterio de información bayesiano ({\itshape Bayesian Information Criterion}, BIC; véase Raftery, 1995), calculado con $D2 - (n - k) * ln (n)$.}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{marginfigure}
   \centering
   \smallskip\noindent\small Figura 1 \\ Distribución del conocimiento político-entrevistador, América Latina 2016/17
@@ -163,7 +180,11 @@
   Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, \href{https://www.vanderbilt.edu/lapop/}{\textcolor{blue}{www.LapopSurveys.org}}.
 \end{marginfigure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section[Resultados] {{\normalfont Resultados}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection[Análisis descriptivo y correlacional] {Análisis descriptivo y correlacional}
 
@@ -392,7 +413,11 @@
   \\ \smallskip\noindent\scriptsize Fuente: Elaboración propia con datos del Barómetro de las Américas 2016/17 por LAPOP, \href{https://www.vanderbilt.edu/lapop/}{\textcolor{blue}{www.LapopSurveys.org}}.
 \end{figure*}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section[Discusi\'on] {{\normalfont Discusi\'on}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \justify{El análisis descriptivo y correlacional permite ver que El Salvador, Panamá y Uruguay tienen los mayores niveles de sofisticación política de la región. En el extremo opuesto es posible ubicar a Ecuador, México y Haití. Por otra parte, al usar las estimaciones puntuales ponderadas de las muestras nacionales como indicadores agregados, la única relación estadísticamente significativa identificable es entre sofisticación política y consumo de medios.}
 
@@ -407,6 +432,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{{\normalfont Referencias}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{list}{}%
 {\leftmargin=1em \itemindent=-1em}
