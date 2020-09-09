@@ -77,6 +77,7 @@
 \begin{document}
 
 \includepdf[pages=1]{../../covers/cover-1/cover-issue-1.pdf}
+\includepdf[pages=2]{../../covers/cover-1/cover-issue-1.pdf}
 
 \maketitle
 
@@ -110,7 +111,7 @@
 
 \justify{Este documento de trabajo eval\'ua un algoritmo alternativo para las legislaturas analizadas por Gonz\'alez-Bustamante y Cisternas (2016). Espec\'ificamente se utiliza ForceAtlas2, un algoritmo de dise\~no gr\'afico contin\'uo desarrollado por Jacomy et al. (2014) con base en un dise\~no dirigido por fuerza ({\itshape force-directed}). Si bien el algoritmo Fruchterman y Reingold (1991) tambi\'en es dirigido por fuerza, los modelos de energ\'ia var\'ian ya que cada algoritmo se basa en f\'ormulas diferentes para la fuerza de atracci\'on y de repulsi\'on.}
 
-\justify{Este documento se estructura en tres apartados. Primero, un apartado metodol\'ogico que detalla los datos y algoritmos usados. Segundo, los principales resultados de la aplicaci\'on de ForceAtlas2. Finalmente, un breve resumen de los principales hallazgos y l\'ineas futuras de investigaci\'on.}
+\justify{El objetivo principal de este trabajo es demostrar que introduciendo mejoras como el uso del algoritmo ForceAtlas2 y algunos ajustes específicos en su configuración es posible realizar un análisis más específico de las conexiones y la confirmación de conglomerados en un grupo, en este caso en la élite legislativa. Esto permite una evaluación visual más intuitiva de los niveles de homogeneidad y cierre social. Para cumplir con este objetivo, este documento se estructura en tres apartados. Primero, un apartado metodol\'ogico que detalla los datos y algoritmos usados. Segundo, los principales resultados de la aplicaci\'on de ForceAtlas2. Finalmente, un breve resumen de los principales hallazgos y l\'ineas futuras de investigaci\'on.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -205,8 +206,8 @@ F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
 \captionsetup[subfigure]{labelformat=empty}
   \centering
   \smallskip\noindent\small Figura 1 \\ Legislatura 1990-1994
-  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{../figures/FR-1990}}
-  \subfloat[ForceAtlas2]{\includegraphics[width=.5\linewidth]{../figures/FA2-1990}}
+  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{../01.Figures/FR-1990}}
+  \subfloat[ForceAtlas2]{\includegraphics[width=.5\linewidth]{../01.Figures/FA2-1990}}
   \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versi\'on se utilizan colores para indicar militancia pol\'itica: PDC azul purp\'ureo, RN malaquita, IND tomate, PPD violeta, UDI anaranjado, PR malva, PAIS carmes\'i y PH verde oscuro.\\
   Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
 \end{figure}
@@ -217,8 +218,8 @@ F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
 \captionsetup[subfigure]{labelformat=empty}
   \centering
   \smallskip\noindent\small Figura 2 \\ Legislatura 1994-1998
-  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{../figures/FR-1994}}
-  \subfloat[ForceAtlas2]{\includegraphics[width=.5\linewidth]{../figures/FA2-1994}}
+  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{../01.Figures/FR-1994}}
+  \subfloat[ForceAtlas2]{\includegraphics[width=.5\linewidth]{../01.Figures/FA2-1994}}
   \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versi\'on se utilizan colores para indicar militancia pol\'itica: PDC azul purp\'ureo, RN malaquita, UDI tomate, PS violeta, PPD anaranjado, IND malva, UCC carmes\'i y PR verde oscuro.\\
   Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
 \end{figure}
@@ -229,8 +230,8 @@ F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
 \captionsetup[subfigure]{labelformat=empty}
   \centering
   \smallskip\noindent\small Figura 3 \\ Legislatura 1998-2002
-  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{../figures/FR-1998}}
-  \subfloat[ForceAtlas2]{\includegraphics[width=.5\linewidth]{../figures/FA2-1998}}
+  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{../01.Figures/FR-1998}}
+  \subfloat[ForceAtlas2]{\includegraphics[width=.5\linewidth]{../01.Figures/FA2-1998}}
   \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versi\'on se utilizan colores para indicar militancia pol\'itica: PDC azul purp\'ureo, RN malaquita, UDI tomate, PPD violeta, PS anaranjado, IND malva, PRSD carmes\'i y UCCP verde oscuro.\\
   Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
 \end{figure}
@@ -241,8 +242,8 @@ F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
 \captionsetup[subfigure]{labelformat=empty}
   \centering
   \smallskip\noindent\small Figura 4 \\ Legislatura 2002-2006
-  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{../figures/FR-2002}}
-  \subfloat[ForceAtlas2]{\includegraphics[width=.5\linewidth]{../figures/FA2-2002}}
+  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{../01.Figures/FR-2002}}
+  \subfloat[ForceAtlas2]{\includegraphics[width=.5\linewidth]{../01.Figures/FA2-2002}}
   \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versi\'on se utilizan colores para indicar militancia pol\'itica: UDI azul purp\'ureo, PDC malaquita, PPD tomate, RN violeta, IND anaranjado, PS malva y PRSD carmes\'i.\\
   Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
 \end{figure}
@@ -253,8 +254,8 @@ F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
 \captionsetup[subfigure]{labelformat=empty}
   \centering
   \smallskip\noindent\small Figura 5 \\ Legislatura 2006-2010
-  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{../figures/FR-2006}}
-  \subfloat[ForceAtlas2]{\includegraphics[width=.5\linewidth]{../figures/FA2-2006}}
+  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{../01.Figures/FR-2006}}
+  \subfloat[ForceAtlas2]{\includegraphics[width=.5\linewidth]{../01.Figures/FA2-2006}}
   \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versi\'on se utilizan colores para indicar militancia pol\'itica: UDI azul purp\'ureo, PPD malaquita, PDC tomate, RN violeta, PS anaranjado, PRSD malva, IND carmes\'i y PAR verde oscuro.\\
   Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
 \end{figure}
@@ -267,8 +268,8 @@ F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
 \captionsetup[subfigure]{labelformat=empty}
   \centering
   \smallskip\noindent\small Figura 6 \\ Legislatura 2010-2014
-  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{../figures/FR-2010}}
-  \subfloat[ForceAtlas2]{\includegraphics[width=.5\linewidth]{../figures/FA2-2010}}
+  \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{../01.Figures/FR-2010}}
+  \subfloat[ForceAtlas2]{\includegraphics[width=.5\linewidth]{../01.Figures/FA2-2010}}
   \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versi\'on se utilizan colores para indicar militancia pol\'itica: UDI azul purp\'ureo, PDC malaquita, RN tomate, PPD violeta, PS anaranjado, IND malva, PRSD carmes\'i y PRI verde oscuro.\\
   Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
 \end{figure}
@@ -303,13 +304,11 @@ Humanidades, Universidad Católica de Temuco. ORCID iD: \href{https://orcid.org/
 \vspace{1mm}{\LARGE \Letter} \href{alejandro.olivares@uct.cl}{\textcolor{blue}{\normalsize alejandro.olivares@uct.cl}}}
 \vspace{8mm}
 
-\justify{\textcolor{red}{\lipsum[1]}}
+\justify{Se trata de un documento de trabajo que constituye un aporte al campo de estudio de las élites, particularmente entre aquellos investigadores que buscan analizar las conexiones (redes) que existen dentro de las élites políticas, económicas y sociales. Esto pues se propone una mejora a la forma en que se presentan los conglomerados de las redes analizadas.  El uso grafos para identificar grupos o comunidades permite visualizar la forma en que se agrupan las conexiones y el alcance de las redes. No obstante, al momento de publicar los hallazgos se pueden generar problemas visuales que dificultan, para un lector menos especializado, la interpretación de los resultados, toda vez que la presentación de los grafos no es amigable, los puntos se solapan y puede ser difícil en un artículo analizar los efectos.  Esto, tal como proponen los autores se soluciona con el algoritmo ForceAtlas2 que permite “una mejor visualización y además permite apreciar de mejor forma los conglomerados que se conforman”. Esto se logra muy bien en el trabajo.}
 
-\justify{\textcolor{red}{\lipsum[1]}}
+\justify{Uno de los aspectos que el documento podría mejorar es la forma en que se presenta el texto. La entrada es muy directa y falta contextualización sobre la importancia del estudio de redes y la lógica de los grafos y del análisis de redes. En ese sentido se recomienda dedicar al menos un párrafo para orientar al lector sobre la importancia de estas lógicas.  Del mismo modo, es relevante señalar en la introducción de forma más clara el objetivo del trabajo. Sería suficiente con dos líneas que indiquen que se busca demostrar que introduciendo mejoras como el algoritmo ForceAtlas2 es posible realizar un análisis más específico de las conexiones y la conformación de conglomerados y, de esta forma, evaluar que tan cerrada o abierta es la élite analizada.}
 
-\justify{\textcolor{red}{\lipsum[1]}}
-
-\justify{\textcolor{red}{\lipsum[1]}}
+\justify{Por otra parte, la discusión final podría extenderse un poco más. Para un trabajo tan bien desarrollado el cierre podría profundizar un poco más en, por ejemplo, las limitaciones potenciales del algoritmo o bien destacar más sus potenciales no solo para el análisis de las élites políticas, sino que para redes en general y élites de todo tipo.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -324,14 +323,14 @@ Humanidades, Universidad Católica de Temuco. ORCID iD: \href{https://orcid.org/
 
 {\noindent {\bfseries Carla Cisternas} (autora)}
 
-{\noindent {\includegraphics[width=.085\linewidth]{../badges/conceptualization}
-{\includegraphics[width=.085\linewidth]{../badges/data_curation} {\includegraphics[width=.085\linewidth]{../badges/formal_analysis}
-{\includegraphics[width=.085\linewidth]{../badges/investigation} {\includegraphics[width=.085\linewidth]{../badges/computation} {\includegraphics[width=.085\linewidth]{../badges/testing} {\includegraphics[width=.085\linewidth]{../badges/data_visualization} {\includegraphics[width=.085\linewidth]{../badges/writing_initial_draft}
-{\includegraphics[width=.085\linewidth]{../badges/writing_review}}\\
+{\noindent {\includegraphics[width=.085\linewidth]{../../badges/conceptualization}
+{\includegraphics[width=.085\linewidth]{../../badges/data_curation} {\includegraphics[width=.085\linewidth]{../../badges/formal_analysis}
+{\includegraphics[width=.085\linewidth]{../../badges/investigation} {\includegraphics[width=.085\linewidth]{../../badges/computation} {\includegraphics[width=.085\linewidth]{../../badges/testing} {\includegraphics[width=.085\linewidth]{../../badges/data_visualization} {\includegraphics[width=.085\linewidth]{../../badges/writing_initial_draft}
+{\includegraphics[width=.085\linewidth]{../../badges/writing_review}}\\
 
 {\noindent {\bfseries Alejandro Olivares L.} (evaluador)}
 
-{\noindent {\includegraphics[width=.085\linewidth]{../badges/writing_review}}
+{\noindent {\includegraphics[width=.085\linewidth]{../../badges/writing_review}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
