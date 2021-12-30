@@ -24,10 +24,6 @@ The GitHub repository has controlled access with Two-Factor Authentication (2FA)
 
 These working papers are released under a [Creative Commons Attribution 4.0 International license (CC BY 4.0)](LICENSE.md). This open-access license allows the data to be shared, reused, adapted as long as appropriate acknowledgement is given.
 
-## Contribute
+## Submissions
 
-Contributions are entirely welcome. You just need to [open an issue](https://github.com/training-datalab/tufte-working-papers/issues/new) with your comment or idea.
-
-For more substantial contributions, please fork this repository and make changes. Pull requests are also welcome.
-
-Please read our [code of conduct](CODE_OF_CONDUCT.md) first. Minor contributions will be acknowledged, and significant ones will be considered on our contributor roles taxonomy.
+Submissions can be made to the email address of our associate editor c.g.cisternas.guasch@hum.leidenuniv.nl.
