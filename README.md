@@ -6,9 +6,9 @@
 
 ## Overview
 
-Tufte Working Papers (ISSN 2735-6043) is a continuous publication based at Training Data Lab with logistical support from the Universidad de Santiago de Chile. This series of papers promotes debate in the social sciences, especially on issues related to political science and public policies. The series includes unpublished papers and revised versions of previous publications that propose innovative research techniques or offer novel empirical information. The papers are published in Spanish and English, although preference is given to publications in Spanish in order to support the divulgation of open access knowledge in Ibero-America.
+**Tufte Working Papers (ISSN 2735-6043)** is a continuous publication based at Training Data Lab with logistical support from the Universidad de Santiago de Chile. This series of papers promotes debate in the social sciences, especially on issues related to political science and public policies. The series includes unpublished papers and revised versions of previous publications that propose **innovative research techniques or offer novel empirical information**. The papers are published in Spanish and English, although preference is given to publications in Spanish in order to support the divulgation of open access knowledge in Ibero-America.
 
-This series is produced entirely in Tufte-LaTeX, inspired by Edward R. Tufte. In addition, it is licensed under [Creative Commons](LICENSE.md), therefore, its content is open access and uses the CRediT taxonomy to identify co-authored contributions along with an [open review](https://training-datalab.com/tufte-open-review/) process. For further information, see the [guidelines](https://training-datalab.com/tufte-guidelines/) for this series.
+This series is produced entirely in Tufte-LaTeX, inspired by Edward R. Tufte. In addition, it is licensed under [Creative Commons](LICENSE.md), therefore, its content is open access and uses the [CRediT](https://training-datalab.com/credit/) taxonomy to identify co-authored contributions along with an [open review](https://training-datalab.com/tufte-open-review/) process. For further information, see the [guidelines](https://training-datalab.com/tufte-guidelines/) for this series.
 
 ## Storage and Backup
 
