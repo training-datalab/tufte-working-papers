@@ -10,16 +10,24 @@ Tufte Working Papers (ISSN 2735-6043) is a continuous publication based at Train
 
 This series is produced entirely in Tufte-LaTeX, inspired by Edward R. Tufte. In addition, it is licensed under [Creative Commons](LICENSE.md), therefore, its content is open access and uses the CRediT taxonomy to identify co-authored contributions along with an [open review](https://training-datalab.com/tufte-open-review/) process. For further information, see the [guidelines](https://training-datalab.com/tufte-guidelines/) for this series.
 
-## Store and Backup
+## Storage and Backup
 
-The GitHub repository has controlled access with Two-Factor Authentication (2FA) with two physical USB security devices (Bastián González-Bustamante, [ORCID iD 0000-0003-1510-6820](https://orcid.org/0000-0003-1510-6820)). Both USB keys issue one-time passwords to generate a cryptographic authentication FIDO2 and U2F.
+The GitHub repository has controlled access with Two-Factor Authentication (2FA) with two physical USB security devices (Bastián González-Bustamante, [ORCID iD 0000-0003-1510-6820](https://orcid.org/0000-0003-1510-6820), and Carla Cisternas, [ORCID iD 0000-0001-7948-6194](https://orcid.org/0000-0001-7948-6194)). Both USB keys issue one-time passwords to generate a cryptographic authentication FIDO2 and U2F.
 
 ## Issues
 
-González-Bustamante, B. (2021, forthcoming). Sofisticación, participación y compromiso político en América Latina. Tufte Working Papers, 2. DOI: 10.31235/osf.io/r4pj8.
+* González-Bustamante, B. (2021, forthcoming). Sofisticación, participación y compromiso político en América Latina. Tufte Working Papers, 2. DOI: 10.31235/osf.io/r4pj8.
 
-González-Bustamante, B., & Cisternas, C. (2020). Aplicación de ForceAtlas2, un algoritmo de diseño gráfico continúo, para el estudio de las élites. Tufte Working Papers, 1, 1-15. DOI: 10.31235/osf.io/gxrkc.
+* González-Bustamante, B., & Cisternas, C. (2020). Aplicación de ForceAtlas2, un algoritmo de diseño gráfico continúo, para el estudio de las élites. Tufte Working Papers, 1, 1-15. DOI: 10.31235/osf.io/gxrkc.
 
 ## License
 
 These working papers are released under a [Creative Commons Attribution 4.0 International license (CC BY 4.0)](LICENSE.md). This open-access license allows the data to be shared, reused, adapted as long as appropriate acknowledgement is given.
+
+## Contribute
+
+Contributions are entirely welcome. You just need to [open an issue](https://github.com/training-datalab/tufte-working-papers/issues/new) with your comment or idea.
+
+For more substantial contributions, please fork this repository and make changes. Pull requests are also welcome.
+
+Please read our [code of conduct](CODE_OF_CONDUCT.md) first. Minor contributions will be acknowledged, and significant ones will be considered on our contributor roles taxonomy.
