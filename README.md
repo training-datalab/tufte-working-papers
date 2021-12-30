@@ -16,9 +16,9 @@ The GitHub repository has controlled access with Two-Factor Authentication (2FA)
 
 ## Issues
 
-* González-Bustamante, B. (2021, forthcoming). Sofisticación, participación y compromiso político en América Latina. Tufte Working Papers, 2. DOI: 10.31235/osf.io/r4pj8.
+* González-Bustamante, B. (2021, forthcoming). Sofisticación, participación y compromiso político en América Latina. Tufte Working Papers, 2. DOI: [10.31235/osf.io/r4pj8](https://doi.org/10.31235/osf.io/r4pj8).
 
-* González-Bustamante, B., & Cisternas, C. (2020). Aplicación de ForceAtlas2, un algoritmo de diseño gráfico continúo, para el estudio de las élites. Tufte Working Papers, 1, 1-15. DOI: 10.31235/osf.io/gxrkc.
+* González-Bustamante, B., & Cisternas, C. (2020). Aplicación de ForceAtlas2, un algoritmo de diseño gráfico continúo, para el estudio de las élites. Tufte Working Papers, 1, 1-15. DOI: [10.31235/osf.io/gxrkc](https://doi.org/10.31235/osf.io/gxrkc).
 
 ## License
 
