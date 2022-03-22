@@ -2,7 +2,7 @@
 **ISSN 2735-6043** \
 **https://training-datalab.com/tufte-working-papers**
 
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](STATUS.md) [![GitHub issues](https://img.shields.io/github/issues/training-datalab/tufte-working-papers.svg)](https://github.com/training-datalab/tufte-working-papers/issues/) [![GitHub issues-closed](https://img.shields.io/github/issues-closed/training-datalab/tufte-working-papers.svg)](https://github.com/training-datalab/tufte-working-papers/issues?q=is%3Aissue+is%3Aclosed) [![License](https://img.shields.io/badge/license-CC--BY--4.0-black)](LICENSE.md) [![Latex](https://img.shields.io/badge/made%20with-LaTeX-1f425f.svg)](https://www.latex-project.org/) 
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](STATUS.md) [![GitHub issues](https://img.shields.io/github/issues/training-datalab/tufte-working-papers.svg)](https://github.com/training-datalab/tufte-working-papers/issues/) [![GitHub issues-closed](https://img.shields.io/github/issues-closed/training-datalab/tufte-working-papers.svg)](https://github.com/training-datalab/tufte-working-papers/issues?q=is%3Aissue+is%3Aclosed) [![License](https://img.shields.io/badge/license-CC--BY--4.0-black)](LICENSE.md) [![Latex](https://img.shields.io/badge/made%20with-LaTeX-1f425f.svg)](https://www.latex-project.org/)
 
 ## Overview
 
@@ -10,7 +10,11 @@
 
 This series is produced entirely in Tufte-LaTeX, inspired by Edward R. Tufte. In addition, it is licensed under [Creative Commons](LICENSE.md), therefore, its content is open access and uses the [CRediT](https://training-datalab.com/credit/) taxonomy to identify co-authored contributions along with an [open review](https://training-datalab.com/tufte-open-review/) process. For further information, see the [guidelines](https://training-datalab.com/tufte-guidelines/) for this series.
 
-## Storage and Backup
+## Indexing and Readership
+
+This working papers series are indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 1,007 until March 2022.
+
+## Storage
 
 The GitHub repository has controlled access with Two-Factor Authentication (2FA) with two physical USB security devices and mobile applications. USB devices and mobile applications issue one-time passwords to generate a cryptographic authentication FIDO2 and U2F.
 
@@ -26,4 +30,4 @@ These working papers are released under a [Creative Commons Attribution 4.0 Inte
 
 ## Submissions
 
-Submissions can be made to the email address of our associate editor c.g.cisternas.guasch@hum.leidenuniv.nl.
+Submissions can be made to the email address of our associate editor  jaquelin.morillo@training-datalab.com.
