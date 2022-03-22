@@ -16,7 +16,7 @@ This working papers series are indexed in **Latindex-Directorio**. The full text
 
 ## Storage
 
-The GitHub repository has controlled access with Two-Factor Authentication (2FA) with two physical USB security devices and mobile applications. USB devices and mobile applications issue one-time passwords to generate a cryptographic authentication FIDO2 and U2F.
+The [GitHub repository](https://github.com/training-datalab/tufte-working-papers) has controlled access with Two-Factor Authentication (2FA) with two physical USB security devices and mobile applications. USB devices and mobile applications issue one-time passwords to generate a cryptographic authentication FIDO2 and U2F. Furthermore, a Digital Object Identifier is provided by SocArXiv.
 
 ## Issues
 
