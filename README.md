@@ -12,7 +12,7 @@ This series is produced entirely in Tufte-LaTeX, inspired by Edward R. Tufte. In
 
 ## Indexing and Readership
 
-This working papers series are indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 1,007 until March 2022.
+This working papers series is indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 1,007 until March 2022.
 
 ## Storage
 
