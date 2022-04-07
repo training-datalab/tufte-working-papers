@@ -12,7 +12,7 @@ This series is produced entirely in `Tufte-LaTeX`, inspired by Edward R. Tufte. 
 
 ## Indexing and Readership
 
-This working papers series is indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 676 until April 2022.
+This working papers series is indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 1,077 until April 2022.
 
 ## Storage
 
@@ -22,7 +22,7 @@ The [GitHub repository](https://github.com/training-datalab/tufte-working-papers
 
 * González-Bustamante, B. (2021). Sofisticación, participación y compromiso político en América Latina. *Tufte Working Papers*, 2, 1-21. DOI: [10.31235/osf.io/r4pj8](https://doi.org/10.31235/osf.io/r4pj8).
 
-* González-Bustamante, B., & Cisternas, C. (2020). Aplicación de ForceAtlas2, un algoritmo de diseño gráfico continúo, para el estudio de las élites. *Tufte Working Papers*, 1, 1-15. DOI: [10.31235/osf.io/gxrkc](https://doi.org/10.31235/osf.io/gxrkc).
+* González-Bustamante, B., & Cisternas, C. (2020). Aplicación de ForceAtlas2, un algoritmo de diseño gráfico continuo, para el estudio de las élites. *Tufte Working Papers*, 1, 1-15. DOI: [10.31235/osf.io/gxrkc](https://doi.org/10.31235/osf.io/gxrkc).
 
 ## License
 
