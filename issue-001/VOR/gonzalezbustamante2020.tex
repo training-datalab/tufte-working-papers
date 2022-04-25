@@ -113,7 +113,7 @@
 
 \justify{En este contexto, tal como se indica en González-Bustamante (2020) y Olivares et al. (2020), si bien el SNA aplicado al estudio de las \'elites pol\'iticas tiene diversas potencialidades, pueden existir algunos problemas cuando se basa en la idea de que los atributos se cristalizan en perspectivas ideol\'ogicas u ontol\'ogicas. Esto porque el concepto de cristalizaci\'on se asocia, por ejemplo, al {\itshape habitus} de Bourdieu (1980), por tanto, opera una estructura estructurante que se transforma en redes de cooperaci\'on. Sin embargo, puede ser que el v\'inculo no exista o que la relaci\'on sea conflictiva. Por otra parte, cuando se trabaja desde una perspectiva relacional, pueden existir problemas de deseabilidad social.}
 
-\justify{Este documento de trabajo eval\'ua un algoritmo alternativo para las legislaturas analizadas por Gonz\'alez-Bustamante y Cisternas (2016). Espec\'ificamente se utiliza ForceAtlas2, un algoritmo de dise\~no gr\'afico contin\'uo desarrollado por Jacomy et al. (2014) con base en un dise\~no dirigido por fuerza ({\itshape force-directed}). Si bien el algoritmo Fruchterman y Reingold (1991) tambi\'en es dirigido por fuerza, los modelos de energ\'ia var\'ian ya que cada algoritmo se basa en f\'ormulas diferentes para la fuerza de atracci\'on y de repulsi\'on.}
+\justify{Este documento de trabajo eval\'ua un algoritmo alternativo para las legislaturas analizadas por Gonz\'alez-Bustamante y Cisternas (2016). Espec\'ificamente se utiliza ForceAtlas2, un algoritmo de dise\~no gr\'afico continuo desarrollado por Jacomy et al. (2014) con base en un dise\~no dirigido por fuerza ({\itshape force-directed}). Si bien el algoritmo Fruchterman y Reingold (1991) tambi\'en es dirigido por fuerza, los modelos de energ\'ia var\'ian ya que cada algoritmo se basa en f\'ormulas diferentes para la fuerza de atracci\'on y de repulsi\'on.}
 
 \justify{El objetivo principal de este trabajo es demostrar que introduciendo mejoras, como el uso del algoritmo ForceAtlas2 y ajustes específicos en su configuración, es posible realizar un análisis más detallados de las conexiones y la conformación de conglomerados en un grupo, en este caso la élite legislativa chilena. Esto permite una evaluación visual más intuitiva de los niveles de homogeneidad y cierre social. Para cumplir con este objetivo, este documento se estructura en tres apartados. Primero, un apartado metodol\'ogico que detalla los datos y algoritmos usados. Segundo, los principales resultados de la aplicaci\'on de ForceAtlas2. Finalmente, un breve resumen de los principales hallazgos, l\'ineas futuras de investigaci\'on y límites.}
 
@@ -148,7 +148,7 @@
   \\~\\ \smallskip\noindent\scriptsize Fuente: Adaptaci\'on de Gonz\'alez-Bustamante y Cisternas (2016) con datos de Joignant (2014), Gonz\'alez-Bustamante (2014) y del Servicio Electoral de Chile.
 \end{table}
 
-\justify{El an\'alisis se realiza sobre los diputados electos ({\itshape n} = 720), que corresponden a 329 individuos debido a las altas tasas de incumbencia y reelecci\'on en la C\'amara de Diputados chilena (tabla 1)\footnote{Tal como indican Gonz\'alez-Bustamante y Cisternas (2016) estos datos difieren levemente de los de Bunker y Navia (2015), pues se reporta un diputado menos reelecto en 2001, lo que fue verificado con informaci\'on actualizada del Servicio Electoral. Hay otras cifras de reelecci\'on, como las de Salda\~na (2014), que no concuerdan con estos datos ni con los de Bunker y Navia.}. Los datos de reelecci\'on que se presentan corresponden a los incumbentes que tuvieron \'exito en su mismo distrito. El promedio se eleva a 62,8\% si se considera a aquellos que, estrat\'egicamente, buscaron su reelecci\'on en otro distrito.}
+\justify{El an\'alisis se realiza sobre los diputados electos ({\itshape n} = 720), que corresponden a 329 individuos debido a las altas tasas de incumbencia y reelecci\'on en la C\'amara de Diputados chilena (Tabla 1)\footnote{Tal como indican Gonz\'alez-Bustamante y Cisternas (2016) estos datos difieren levemente de los de Bunker y Navia (2015), pues se reporta un diputado menos reelecto en 2001, lo que fue verificado con informaci\'on actualizada del Servicio Electoral. Hay otras cifras de reelecci\'on, como las de Salda\~na (2014), que no concuerdan con estos datos ni con los de Bunker y Navia.}. Los datos de reelecci\'on que se presentan corresponden a los incumbentes que tuvieron \'exito en su mismo distrito. El promedio se eleva a 62,8\% si se considera a aquellos que, estrat\'egicamente, buscaron su reelecci\'on en otro distrito.}
 
 \subsection[Algoritmos] {Algoritmos}
 
@@ -216,7 +216,7 @@ F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
   Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
 \end{figure}
 
-\justify{En la figura 1 con ForceAtlas2 se aprecian con mayor claridad los dos grandes conglomerados de {\itshape nodos} compuestos por el Partido Dem\'ocrata Cristiano (PDC) y Renovaci\'on Nacional (RN). Con el algoritmo Fruchterman y Reingold se aprecia que un subgrupo de {\itshape nodos} de RN tiende a operar como intermediarios. En el grafo con ForceAtlas2 se aprecia de mejor forma como parte del conglomerado tiene mayores conexiones con otros, a diferencia de un grupo m\'as cerrado con conexiones m\'as fuertes. El valor del grafo medio es 38,567, es decir, en promedio un {\itshape nodo} posee esa cantidad de {\itshape alters} vecinos. El di\'ametro de la red es de cinco, es decir, esa es la m\'axima distancia que existe entre cualquier {\itshape nodo}. Por \'ultimo, la densidad de la red es de 0,324.}
+\justify{En la Figura 1 con ForceAtlas2 se aprecian con mayor claridad los dos grandes conglomerados de {\itshape nodos} compuestos por el Partido Dem\'ocrata Cristiano (PDC) y Renovaci\'on Nacional (RN). Con el algoritmo Fruchterman y Reingold se aprecia que un subgrupo de {\itshape nodos} de RN tiende a operar como intermediarios. En el grafo con ForceAtlas2 se aprecia de mejor forma como parte del conglomerado tiene mayores conexiones con otros, a diferencia de un grupo m\'as cerrado con conexiones m\'as fuertes. El valor del grafo medio es 38,567, es decir, en promedio un {\itshape nodo} posee esa cantidad de {\itshape alters} vecinos. El di\'ametro de la red es de cinco, es decir, esa es la m\'axima distancia que existe entre cualquier {\itshape nodo}. Por \'ultimo, la densidad de la red es de 0,324.}
 
 \begin{figure}[h!]
 \captionsetup[subfigure]{labelformat=empty}
@@ -228,7 +228,7 @@ F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
   Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
 \end{figure}
 
-\justify{La figura 2 mantiene los patrones de la anterior, se aprecia un conglomerado de {\itshape nodos} del PDC que se alejan de del resto de la red, adem\'as de un conglomerado mixto entre el Partido Por la Democracia (PPD) y el Partido Socialista de Chile (PS). En este caso el algoritmo ForceAtlas2 tambi\'en permite una mejor visualizaci\'on. El grafo medio es de 42,667, el di\'ametro de tres y la densidad de 0,359. Si bien la densidad no var\'ia sustancialmente, es una red con menor di\'ametro que la anterior.}
+\justify{La Figura 2 mantiene los patrones de la anterior, se aprecia un conglomerado de {\itshape nodos} del PDC que se alejan de del resto de la red, adem\'as de un conglomerado mixto entre el Partido Por la Democracia (PPD) y el Partido Socialista de Chile (PS). En este caso el algoritmo ForceAtlas2 tambi\'en permite una mejor visualizaci\'on. El grafo medio es de 42,667, el di\'ametro de tres y la densidad de 0,359. Si bien la densidad no var\'ia sustancialmente, es una red con menor di\'ametro que la anterior.}
 
 \begin{figure}[h!]
 \captionsetup[subfigure]{labelformat=empty}
@@ -240,7 +240,7 @@ F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
   Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
 \end{figure}
 
-\justify{En la figura 3 se puede apreciar un crecimiento de los {\itshape nodos} pertenecientes a la Uni\'on Dem\'ocrata Independiente (UDI), conglomerado que tiene lazos principalmente con RN, sus socios de coalici\'on. En el grafo con el algoritmo ForceAtlas2 se puede visualizar su constituci\'on de mejor forma: como un m\'odulo con fuertes conexiones entre s\'i y conexiones con RN, lo que los ubica en la periferia de la red. El grafo medio es de 39,183, el di\'ametro de la red cuatro y la densidad 0,329.}
+\justify{En la Figura 3 se puede apreciar un crecimiento de los {\itshape nodos} pertenecientes a la Uni\'on Dem\'ocrata Independiente (UDI), conglomerado que tiene lazos principalmente con RN, sus socios de coalici\'on. En el grafo con el algoritmo ForceAtlas2 se puede visualizar su constituci\'on de mejor forma: como un m\'odulo con fuertes conexiones entre s\'i y conexiones con RN, lo que los ubica en la periferia de la red. El grafo medio es de 39,183, el di\'ametro de la red cuatro y la densidad 0,329.}
 
 \begin{figure}[h!]
 \captionsetup[subfigure]{labelformat=empty}
@@ -252,7 +252,7 @@ F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
   Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
 \end{figure}
 
-\justify{En la figura 4 se aprecia un crecimiento importante de la UDI. Aquello se percibe de mejor forma con la aplicaci\'on del algoritmo ForceAtlas2, como tambi\'en la posici\'on de intermediaci\'on que tienden a ocupar ciertos {\itshape nodos}. El grafo medio de la red es 34,767, el di\'ametro cuatro y la densidad 0,292.}
+\justify{En la Figura 4 se aprecia un crecimiento importante de la UDI. Aquello se percibe de mejor forma con la aplicaci\'on del algoritmo ForceAtlas2, como tambi\'en la posici\'on de intermediaci\'on que tienden a ocupar ciertos {\itshape nodos}. El grafo medio de la red es 34,767, el di\'ametro cuatro y la densidad 0,292.}
 
 \begin{figure}[h!]
 \captionsetup[subfigure]{labelformat=empty}
@@ -264,9 +264,9 @@ F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
   Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
 \end{figure}
 
-\justify{En la figura 5 tambi\'en se aprecian mejor las posiciones de intermediaci\'on en la red gracias al algoritmo ForceAtlas2. Es posible identificar mejor la cercan\'ia entre los conglomerados del PPD, PS y PDC. Adem\'as, mientras que con el algoritmo Fruchterman y Reingold RN no parece un conglomerado cohesionado, ForceAtlas2 permite apreciar dos grupos: uno fuertemente cohesionado en la periferia de la red y otro que opera como un intermediario entre los conglomerados de PPD, PS y PDC. El grafo medio de esta red es de 37,267, su di\'ametro cuatro y su densidad 0,313.}
+\justify{En la Figura 5 tambi\'en se aprecian mejor las posiciones de intermediaci\'on en la red gracias al algoritmo ForceAtlas2. Es posible identificar mejor la cercan\'ia entre los conglomerados del PPD, PS y PDC. Adem\'as, mientras que con el algoritmo Fruchterman y Reingold RN no parece un conglomerado cohesionado, ForceAtlas2 permite apreciar dos grupos: uno fuertemente cohesionado en la periferia de la red y otro que opera como un intermediario entre los conglomerados de PPD, PS y PDC. El grafo medio de esta red es de 37,267, su di\'ametro cuatro y su densidad 0,313.}
 
-\justify{Finalmente, en la figura 6 se acent\'ua la preponderancia del cl\'uster de la UDI que se conecta, a trav\'es de ciertos {\itshape nodos}, con los conglomerados del PDC, PPD y PS. Si bien el conglomerado de RN se puede identificar mejor que en el grafo anterior con el algoritmo Fruchterman y Reingold, la aplicaci\'on de ForceAtlas2 permite apreciar patrones con mayor facilidad mediante una inspecci\'on visual. El grafo medio es de 32,450, el di\'ametro de la red de cinco y la densidad de 0,273.}
+\justify{Finalmente, en la Figura 6 se acent\'ua la preponderancia del cl\'uster de la UDI que se conecta, a trav\'es de ciertos {\itshape nodos}, con los conglomerados del PDC, PPD y PS. Si bien el conglomerado de RN se puede identificar mejor que en el grafo anterior con el algoritmo Fruchterman y Reingold, la aplicaci\'on de ForceAtlas2 permite apreciar patrones con mayor facilidad mediante una inspecci\'on visual. El grafo medio es de 32,450, el di\'ametro de la red de cinco y la densidad de 0,273.}
 
 \begin{figure}[h!]
 \captionsetup[subfigure]{labelformat=empty}
@@ -280,7 +280,7 @@ F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
 
 \subsection[ForceAtlas2 con algoritmo de modularidad] {ForceAtlas2 con algoritmo de modularidad}
 
-\justify{Indicadores b\'asicos, como la densidad, permiten apreciar que la cantidad de v\'inculos decae desde la segunda legislatura. Al comparar la red m\'as densa (figura 2), con la de menor densidad (figura 6), se aprecia una disminuci\'on del 24\% en el indicador. Sin embargo, otras mediciones m\'as sofisticadas, como el algoritmo de modularidad presentado en el apartado metodol\'ogico, permiten evaluar la solidez de las conexiones entre los {\itshape nodos} de un mismo conglomerado o m\'odulo. A mayor modularidad, existen conexiones m\'as s\'olidas dentro del cl\'uster y menor cantidad de v\'inculos con {\itshape alters} de otros m\'odulos.}
+\justify{Indicadores b\'asicos, como la densidad, permiten apreciar que la cantidad de v\'inculos decae desde la segunda legislatura. Al comparar la red m\'as densa (Figura 2), con la de menor densidad (Figura 6), se aprecia una disminuci\'on del 24\% en el indicador. Sin embargo, otras mediciones m\'as sofisticadas, como el algoritmo de modularidad presentado en el apartado metodol\'ogico, permiten evaluar la solidez de las conexiones entre los {\itshape nodos} de un mismo conglomerado o m\'odulo. A mayor modularidad, existen conexiones m\'as s\'olidas dentro del cl\'uster y menor cantidad de v\'inculos con {\itshape alters} de otros m\'odulos.}
 
 \justify{En este sentido, con la aplicaci\'on del algoritmo de modularidad se obtiene que $\Delta Q$(grafo 1) = 0,354; $\Delta Q$(grafo 2) = 0,375; $\Delta Q$(grafo 3) = 0,372; $\Delta Q$(grafo 4) = 0,416; $\Delta Q$(grafo 5) = 0,414; y $\Delta Q$(grafo 6) = 0,409. Con el algoritmo tambi\'en es posible identificar un n\'umero espec\'ifico de comunidades, lo que permite un an\'alisis m\'as detallado de la red. En la primera legislatura se pueden identificar 13 comunidades, en la segunda y tercera ocho, en la cuarta nueve y en las dos \'ultimas legislaturas solo siete comunidades. Esta es una evidencia mucho m\'as precisa que complementa que no solo existen legislaturas menos densas, en t\'erminos de composici\'on social, adem\'as, el n\'umero de cl\'usteres comienza a descender.}
 
@@ -432,7 +432,8 @@ Humanidades, Universidad Católica de Temuco. ORCID iD: \href{https://orcid.org/
 {\small 3,0} & {\small 13 septiembre 2020} & {\small Fecha de publicación} \\[0.8mm]
 {\small 4,0} & {\small 20 abril 2021} & {\small Correcciones menores}\\[0.8mm]
 {\small 5,0} & {\small 30 diciembre 2021} & {\small Correcciones menores} \\[0.8mm]
-{\small 6,0} & {\small 7 abril 2022} & {\small Correcciones menores} \\
+{\small 6,0} & {\small 7 abril 2022} & {\small Correcciones menores} \\[0.8mm]
+{\small 7,0} & {\small 25 abril 2022} & {\small Correcciones menores} \\
 \end{tabular}
 \end{table}
 \vspace{0.3cm}
