@@ -12,7 +12,7 @@ This series is produced entirely in `Tufte-LaTeX`, inspired by Edward R. Tufte. 
 
 ## Indexing and Readership
 
-This working papers series is indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 1,077 until April 2022.
+This working papers series is indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 1,119 until April 2022.
 
 ## Storage
 
@@ -30,4 +30,4 @@ These working papers are released under a [Creative Commons Attribution 4.0 Inte
 
 ## Submissions
 
-Submissions can be made to the email address of our associate editor  jaquelin.morillo@training-datalab.com.
+Submissions can be made to the email address of our associate editor jaquelin.morillo@training-datalab.com.
