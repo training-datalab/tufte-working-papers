@@ -30,4 +30,4 @@ These working papers are released under a [Creative Commons Attribution 4.0 Inte
 
 ## Submissions
 
-Submissions can be made to the email address of our associate editor jaquelin.morillo@training-datalab.com.
+Submissions can be made to the email address of our associate editor jaquelin.morillo@training-datalab.com or working-papers@training-datalab.com.
