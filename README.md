@@ -12,13 +12,15 @@ This series is produced entirely in `Tufte-LaTeX`, inspired by Edward R. Tufte. 
 
 ## Indexing and Readership
 
-This working papers series is indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 1,306 until July 2022.
+This working papers series is indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 1,485 until October 2022.
 
 ## Storage
 
 The [GitHub repository](https://github.com/training-datalab/tufte-working-papers) has controlled access with Two-Factor Authentication `2FA` with two physical USB security devices and mobile applications. USB devices and mobile applications issue one-time passwords to generate a cryptographic authentication `FIDO2` and `U2F`. Furthermore, a Digital Object Identifier is provided by SocArXiv and Zenodo.
 
 ## Issues
+
+* Cuevas, R. (2022, *forthcoming*). Democracia y libre comercio: Una historia de 30 años más que del siglo XXI. *Tufte Working Papers*, 3.
 
 * González-Bustamante, B. (2021). Sofisticación, participación y compromiso político en América Latina. *Tufte Working Papers*, 2, 1-21. DOI: [10.5281/zenodo.6739833](https://doi.org/10.5281/zenodo.6739833). SocArXiv: [10.31235/osf.io/r4pj8](https://doi.org/10.31235/osf.io/r4pj8).
 
