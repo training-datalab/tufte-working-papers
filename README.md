@@ -20,7 +20,7 @@ The [GitHub repository](https://github.com/training-datalab/tufte-working-papers
 
 ## Issues
 
-* Cuevas, R. (2022, *forthcoming*). Democracia y libre comercio: Una historia de 30 años más que del siglo XXI. *Tufte Working Papers*, 3.
+* Cuevas, R. (2022, *forthcoming*). Democracia y acuerdos de libre comercio: Una relación más de mercado que democracia. *Tufte Working Papers*, 3.
 
 * González-Bustamante, B. (2021). Sofisticación, participación y compromiso político en América Latina. *Tufte Working Papers*, 2, 1-21. DOI: [10.5281/zenodo.6739833](https://doi.org/10.5281/zenodo.6739833). SocArXiv: [10.31235/osf.io/r4pj8](https://doi.org/10.31235/osf.io/r4pj8).
 
