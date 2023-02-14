@@ -2,7 +2,7 @@
 **ISSN 2735-6043** \
 **https://training-datalab.com/tufte-working-papers**
 
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](STATUS.md) [![GitHub issues](https://img.shields.io/github/issues/training-datalab/tufte-working-papers.svg)](https://github.com/training-datalab/tufte-working-papers/issues/) [![GitHub issues-closed](https://img.shields.io/github/issues-closed/training-datalab/tufte-working-papers.svg)](https://github.com/training-datalab/tufte-working-papers/issues?q=is%3Aissue+is%3Aclosed) [![License](https://img.shields.io/badge/license-CC%20BY%204.0-black)](LICENSE-CC.md) [![License](https://img.shields.io/badge/license-LPPL%20v1.3c-black)](LICENSE-LPPL.md) [![Latex](https://img.shields.io/badge/made%20with-LaTeX-1f425f.svg)](https://www.latex-project.org/)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://raw.githubusercontent.com/training-datalab/tufte-working-papers/master/badges/active.svg)](STATUS.md) [![License](https://raw.githubusercontent.com/training-datalab/tufte-working-papers/master/badges/cc_by_4_0.svg)](LICENSE-CC.md) [![License](https://raw.githubusercontent.com/training-datalab/tufte-working-papers/master/badges/lppl.svg)](LICENSE-LPPL.md) [![Latex](https://raw.githubusercontent.com/training-datalab/tufte-working-papers/master/badges/latex.svg)](https://www.latex-project.org/) [![tDL](https://raw.githubusercontent.com/training-datalab/tufte-working-papers/master/badges/tDL.svg)](https://training-datalab.com/)
 
 ## Overview
 
@@ -12,7 +12,7 @@ This series is produced entirely in `Tufte-LaTeX`, inspired by Edward R. Tufte. 
 
 ## Indexing and Readership
 
-This working papers series is indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 1,622 until January 2023.
+This working papers series is indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 1,720 until February 2023.
 
 ## Storage
 
