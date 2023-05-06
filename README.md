@@ -12,13 +12,15 @@ This series is produced entirely in `Tufte-LaTeX`, inspired by Edward R. Tufte. 
 
 ## Indexing and Readership
 
-This working papers series is indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 1,837 until April 2023.
+This working papers series is indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 1,892 until May 2023.
 
 ## Storage
 
 The [GitHub repository](https://github.com/training-datalab/tufte-working-papers) has controlled access with Two-Factor Authentication `2FA` with two physical USB security devices and mobile applications. USB devices and mobile applications issue one-time passwords to generate a cryptographic authentication `FIDO2` and `U2F`. Furthermore, a Digital Object Identifier is provided by SocArXiv and Zenodo.
 
 ## Issues
+
+- González-Bustamante, B. (2024, *forthcoming*). Cinco años del ranking chileno de ciencia política: Explorando la producción científica y el impacto de la disciplina.  *Tufte Working Papers*, 5.
 
 - Cisternas, C., González-Bustamante, B., Morillo, J., & Aguilar, D. (2023, *forthcoming*). Clasificación de proyectos de ley y mociones legislativas: Modelos supervisados y no supervisados aplicados al caso chileno. *Tufte Working Papers*, 4.
 
