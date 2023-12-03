@@ -22,7 +22,7 @@ The [GitHub repository](https://github.com/training-datalab/tufte-working-papers
 
 - González-Bustamante, B. (2025, *forthcoming*). Cinco años del ranking chileno de ciencia política: Explorando la producción científica y el impacto de la disciplina.  *Tufte Working Papers*, 6.
 
-- Cisternas, C., González-Bustamante, B., Morillo, J., & Aguilar, D. (2024, *forthcoming*). Clasificación de proyectos de ley y mociones legislativas: Modelos supervisados y no supervisados aplicados al caso chileno. *Tufte Working Papers*, 5.
+- Cisternas, C., González-Bustamante, B., Morillo Remesnitzky, J., & Aguilar, D. (2024, *forthcoming*). Clasificación de proyectos de ley y mociones legislativas: Modelos supervisados y no supervisados aplicados al caso chileno. *Tufte Working Papers*, 5.
 
 - González-Bustamante, B. (2023, *forthcoming*). Indicadores basados en Google Trends para opinión pública.*Tufte Working Papers*, 4.
 
