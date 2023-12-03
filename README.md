@@ -12,7 +12,7 @@ This series is produced entirely in `Tufte-LaTeX`, inspired by Edward R. Tufte. 
 
 ## Indexing and Readership
 
-This working papers series is indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 2,132 until October 2023.
+This working papers series is indexed in **Latindex-Directorio**. The full text usage, which is the sum of views and downloads from the platform, is 2,204 until December 2023.
 
 ## Storage
 
@@ -20,9 +20,11 @@ The [GitHub repository](https://github.com/training-datalab/tufte-working-papers
 
 ## Issues
 
-- González-Bustamante, B. (2024, *forthcoming*). Cinco años del ranking chileno de ciencia política: Explorando la producción científica y el impacto de la disciplina.  *Tufte Working Papers*, 5.
+- González-Bustamante, B. (2025, *forthcoming*). Cinco años del ranking chileno de ciencia política: Explorando la producción científica y el impacto de la disciplina.  *Tufte Working Papers*, 6.
 
-- Cisternas, C., González-Bustamante, B., Morillo, J., & Aguilar, D. (2023, *forthcoming*). Clasificación de proyectos de ley y mociones legislativas: Modelos supervisados y no supervisados aplicados al caso chileno. *Tufte Working Papers*, 4.
+- Cisternas, C., González-Bustamante, B., Morillo, J., & Aguilar, D. (2024, *forthcoming*). Clasificación de proyectos de ley y mociones legislativas: Modelos supervisados y no supervisados aplicados al caso chileno. *Tufte Working Papers*, 5.
+
+- González-Bustamante, B. (2023, *forthcoming*). Indicadores basados en Google Trends para opinión pública.*Tufte Working Papers*, 4.
 
 - Cuevas, R. (2022). Democracia y acuerdos de libre comercio: Una relación más de mercado que democracia. *Tufte Working Papers*, 3. OnlineFirst. SocArXiv: [10.31235/osf.io/y4fxw](https://doi.org/10.31235/osf.io/y4fxw).
 
