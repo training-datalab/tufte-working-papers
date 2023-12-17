@@ -24,7 +24,7 @@ The [GitHub repository](https://github.com/training-datalab/tufte-working-papers
 
 - Cisternas, C., González-Bustamante, B., Morillo Remesnitzky, J., & Aguilar, D. (2024, *forthcoming*). Clasificación de proyectos de ley y mociones legislativas: Modelos supervisados y no supervisados aplicados al caso chileno. *Tufte Working Papers*, 5.
 
-- González-Bustamante, B. (2023, *forthcoming*). Indicadores basados en Google Trends para opinión pública.*Tufte Working Papers*, 4.
+- González-Bustamante, B. (2023, *forthcoming*). Análisis de Componentes Principales con correlaciones policóricas: Aplicación en consumo de medios.*Tufte Working Papers*, 4.
 
 - Cuevas, R. (2022). Democracia y acuerdos de libre comercio: Una relación más de mercado que democracia. *Tufte Working Papers*, 3. OnlineFirst. SocArXiv: [10.31235/osf.io/y4fxw](https://doi.org/10.31235/osf.io/y4fxw).
 
@@ -38,4 +38,4 @@ These working papers are released under a [Creative Commons Attribution 4.0 Inte
 
 ## Submissions
 
-Submissions can be made to the email address of our associate editor jaquelin.morillo@training-datalab.com or working-papers@training-datalab.com.
+Submissions can be made to working-papers@training-datalab.com.
