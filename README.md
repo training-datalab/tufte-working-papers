@@ -24,7 +24,7 @@ The [GitHub repository](https://github.com/training-datalab/tufte-working-papers
 
 - Cisternas, C., González-Bustamante, B., Morillo Remesnitzky, J., & Aguilar, D. (2024, *forthcoming*). Clasificación de proyectos de ley y mociones legislativas: Modelos supervisados y no supervisados aplicados al caso chileno. *Tufte Working Papers*, 5.
 
-- González-Bustamante, B. (2023, *forthcoming*). Análisis de Componentes Principales con correlaciones policóricas: Aplicación en consumo de medios. *Tufte Working Papers*, 4.
+- González-Bustamante, B. (2023). Análisis de Componentes Principales con correlaciones policóricas: Aplicación en consumo de medios. *Tufte Working Papers*, 4. OnlineFirst. SocArXiv minted in progress: https://osf.io/preprints/socarxiv/npc9e.
 
 - Cuevas, R. (2022). Democracia y acuerdos de libre comercio: Una relación más de mercado que democracia. *Tufte Working Papers*, 3. OnlineFirst. SocArXiv: [10.31235/osf.io/y4fxw](https://doi.org/10.31235/osf.io/y4fxw).
 
