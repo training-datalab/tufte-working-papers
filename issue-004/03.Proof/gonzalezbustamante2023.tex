@@ -1,0 +1,300 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Tufte Working Papers (ISSN 2735-6043)
+%% Bastián González-Bustamante (ed.)
+%% https://training-datalab.com/tufte-working-papers/
+%% https://github.com/training-datalab/tufte-working-papers/blob/master/LICENSE-CC.md
+%% https://github.com/training-datalab/tufte-working-papers/blob/master/LICENSE-LPPL.md
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper]{tufte-handout}
+\usepackage{marvosym}
+\usepackage[spanish]{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Análisis de Componentes Principales con correlaciones policóricas: Aplicación en consumo de medios \textcolor{red}{(proof)} \\~\\~\\} 
+
+\author{{\normalfont Bastián González-Bustamante} \thanks{Post-doctoral Researcher, Institute of Security and Global of Affairs, Faculty of Governance and Global Affairs, Leiden University. ORCID iD: \href{https://orcid.org/0000-0003-1510-6820}{\textcolor{blue}{0000-0003-1510-6820}}.}}
+\date{{\normalfont \normalsize \vspace{-1mm}Leiden University} \\ {\LARGE \Letter} \href{mailto:b.a.gonzalez.bustamante@fgga.leidenuniv.nl}{\textcolor{blue}{\normalfont \normalsize b.a.gonzalez.bustamante@fgga.leidenuniv.nl}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hyphenation{Latino-america-na Elecci\'on eleccio-nes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx} 
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} 
+\usepackage{amsmath}  
+\usepackage{booktabs} 
+\usepackage{units}
+\usepackage{multicol}
+\usepackage{lipsum} 
+\usepackage{fancyvrb} 
+  \fvset{fontsize=\normalsize}
+
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}
+\newcommand{\docenv}[1]{\textsf{#1}}
+\newcommand{\docpkg}[1]{\texttt{#1}}
+\newcommand{\doccls}[1]{\texttt{#1}}
+\newcommand{\docclsopt}[1]{\texttt{#1}}
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \pdfinfo{
+   /Author (Bastián González-Bustamante)
+   /Title  (Análisis de Componentes Principales con correlaciones policóricas: Aplicación en consumo de medios)
+   Subject (Tufte Working Papers)
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\addto\captionsspanish{
+\def\tablename{Tabla}
+\def\figurename{Figura}
+}
+
+\usepackage{subfig}
+\usepackage{emerald}
+\usepackage[T1]{fontenc}
+\usepackage{multirow} 
+\usepackage{hyperref}
+\usepackage{xcolor, colortbl}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+\vspace{8mm}
+\justify{\small {\bfseries Resumen:} \marginnote{{\itshape {\bfseries Palabras clave:} }} }\\~\\
+
+{\noindent \LARGE \itshape Principal Component Analysis with Polychoric Correlations: Application to Media Consumption}\\
+
+\justify{\small {\bfseries Abstract:} \marginnote{{\itshape {\bfseries Keywords:} }}  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+~\vfill
+{\noindent \bfseries Nro. 4 | 2023}\\
+{\noindent González-Bustamante, B. (2023). Análisis de Componentes Principales con correlaciones policóricas: Aplicación en consumo de medios. {\itshape Tufte Working Papers}, 4, 1--\textcolor{red}{TBC}. {\scshape doi:} \href{https://training-datalab.com/tufte-working-papers/}{\textcolor{red}{TBC}}. {\small SocArXiv:} \href{https://doi.org/10.31235/osf.io/npc9e}{\textcolor{blue}{10.31235/osf.io/npc9e}}.}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% \vspace{8mm}
+\section[Introducción] {{\normalfont Introducción} \footnote{Este documento fue parcialmente financiado por el proyecto “A Crisis of Legitimacy: Challenges of the Political Order in Argentina, Chile and Uruguay” del International Development Research Centre (IDRC) de Canadá y por el proyecto USA1498.37 de la Universidad de Santiago de Chile (USACH). El autor declara no tener potenciales conflictos de interés con respecto a esta investigación.}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\justify{Este documento de trabajo metodológico profundiza en el Análisis de Componentes Principales ({\itshape Principal Component Analysis}, PCA) como dispositivo probatorio en sus funciones de técnica exploratoria/reductiva de análisis de datos y de presentación de resultados. En ese sentido, el principal objetivo de este trabajo es evaluar la aplicación de PCA con correlaciones policóricas. Estas correlaciones son modelos bivariados que operan como técnica auxiliar en la ejecución de PCA y permiten un modelamiento más preciso de variables ordinales/cuasi-cuantitativas, pero también para variables dicotómicas/binarias en el caso de las correlaciones tetracóricas (Cupani y Saurina, 2011; Dominguez Lara, 2014). Esto ofrece diversas ventajas en ciencias sociales debido a la gran cantidad de información no numérica con la cual se trabaja\footnote{Generalmente se utilizan mediciones multipuntos como escalas categóricas ordenadas o tipo Likert, como también mediciones de tipo ordinal (Ferrando y Anguiano-Carrasco, 2010).}.}
+
+\justify{Para evaluar la aplicación de PCA con correlaciones policóricas se conduce un caso práctico que permite apreciar y contrastar resultados. El caso corresponde a una exploración sobre el consumo de medios y la participación política en Argentina, Chile y Uruguay. Para esto se utilizan datos de encuestas de opinión probabilísticas comparables que fueron aplicadas en los tres países. Estos conjuntos de datos han sido utilizados en trabajos como Joignant et al. (2017) y González-Bustamante (2018, 2019, 2021) y aunque son un poco antiguos, resultan útiles para el objetivo demostrativo de este trabajo metodológico\footnote{Una aplicación práctica con correlaciones tetracóricas y variables dicotómicas/binarias utilizando datos de la serie de tiempo de las encuestas de opinión probabilísticas de la Universidad Diego Portales (UDP), entre 2009 y 2014, se realizó con las preferencias de los niveles de intervención estatal en Chile (véase González-Bustamante y Barría, 2015).}.}
+
+\justify{En consecuencia, este documento se compone de cuatro apartados que siguen a esta introducción. En el siguiente apartado se aborda el PCA, sus similitudes y diferencias con el análisis factorial, criterios de retención de componentes/factores y rotación de ejes. Posteriormente, se aborda el caso práctico y se ofrecen detalles como antecedentes, información de los datos, procedimiento de medición y aplicación de la técnica. Luego, se presentan los resultados en tres niveles: (a) análisis univariado y bivariado con datos descriptivos y matrices de correlaciones; (b) evaluación y de métodos de retención de componentes/factores; y (c) el PCA con los componentes rotados y distintos reportes estadísticos. Finalmente, se ofrecen unas breves conclusiones a partir de la evidencia presentada.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section[Análisis de Componentes Principales y Factorial en ciencias sociales] {{\normalfont Análisis de Componentes Principales y Factorial en ciencias sociales}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection[Similitudes y diferencias entre PCA y análisis factorial] {Similitudes y diferencias entre PCA y análisis factorial}
+
+\justify{El PCA y el análisis factorial son técnicas estadísticas bastante similares en términos formales ya que ambas se ejecutan a través de descripciones de series de combinaciones lineales desde una matriz de variables. Las diferencias radican principalmente en el método de extracción de información desde la matriz (Pérez y Medrano, 2010). El PCA es una técnica reductiva que se utiliza principalmente para análisis exploratorio de datos y la conformación de la menor cantidad de componentes que expliquen la mayor cantidad de varianza considerando la varianza compartida o comunalidad de las variables y sus diferencias o especificidades (Dominguez Lara, 2014; Ferrando y Anguiano-Carrasco, 2010; Linting et al., 2007). El análisis factorial, por otra parte, es una técnica de reducción de datos que permite vislumbrar la estructura subyacente o latente de la información explicando la covarianza de las varianzas, por lo cual solamente se enfoca en la varianza compartida de las variables consideradas (González-Bustamante, 2018; Pérez y Medrano, 2010). La capacidad reductiva de ambas aplicaciones es valiosa ya que permite agrupar un gran número de variables, sin un significando teórico, en un número menor con un significado conceptual (Pérez y Medrano, 2010). Además, una característica central de ambos análisis es que, a diferencia de los modelos econométricos, no se utiliza una variable dependiente por la naturaleza de los objetivos de la técnica, ya sean estos exploratorios o reductivos.}
+
+\justify{Estas técnicas, al igual que las regresiones, tienen, por una parte, sus antecedentes en los trabajos pioneros de Galton (1886, 1869) sobre la herencia de la estatura y rasgos intelectuales y, por otra, en el coeficiente de correlación entre variables de Pearson (1901). Sin embargo, es Spearman (1904) quien formalmente impulsó el desarrollo del análisis factorial propiamente tal\footnote{Para más detalles sobre sus aplicaciones durante la primera mitad del siglo XX véase Pérez y Medrano (2010).}. Desde entonces ambos análisis se han popularizado bastante y las ciencias sociales no han estado al margen (Afifi et al., 2020; van Belle et al., 2004). Esta situación ha implicado el desarrollo de ciertas aplicaciones estadísticamente poco ortodoxas ya que las ciencias sociales suelen trabajar con una gran cantidad de información no numérica, lo que complejiza el cumplimiento de ciertos supuestos metodológicos necesarios. Sin embargo, existen métodos para aumentar la precisión de los análisis con este tipo de datos.}
+
+\justify{Los supuestos metodológicos tradicionales de aplicación de ambas técnicas tienen ciertas similitudes con los modelos lineales por mínimos cuadrados ordinarios ({\itshape Ordinary Least Squares}, OLS) como la distribución normal, linealidad y multicolinealidad de los datos (Pérez y Medrano, 2010). En general esto se puede evaluar con análisis univariados como gráficos Q-Q, de caja y pruebas estadísticas estándar como el factor de impacto de varianza ({\itshape Variance Impact Factor}, VIF), Shapiro-Wilk y Kolmogorov-Smirnov (Tabachnick y Fidell, 2013). El tamaño de las muestras también es relevante, sin embargo, no hay un acuerdo al respecto. Los criterios más comunes indican que son necesarios al menos 300 casos (Tabachnick y Fidell, 2013) o entre cinco y diez casos por variable (Nunnally y Bernstein, 1994).}
+
+\justify{Además, ambos análisis requieren de ciertas pruebas estadísticas más específicas para determinar si existe interrelación para la exploración y reducción de variables. Estas son la prueba de esfericidad de Barlett ({\itshape Test of Spherecity}), que debiese resultar significativa, y la medida de adecuación muestral Kaiser-Meyer-Olkin (KMO {\itshape Measure of Sampling Adequacy}; véase Kaiser, 1974), la cual se evalúa como un coeficiente de confiabilidad de cero a uno y se considera como valor adecuado 0,700 o superior (Hair Jr. et al., 1999).}
+
+\justify{La aplicación de la técnica consiste en tres etapas: (a) construcción de una matriz de correlaciones con las variables para una reconstrucción lineal que permite obtener coeficientes de regresión o cargas factoriales ({\itshape factor loadings}); (b) aplicación de retención de componentes/factores en una segunda reconstrucción; y (c) aplicación de una rotación de componentes/factores para obtener el resultado definitivo.}
+
+\subsection[Matriz de correlaciones y reconstrucción lineal] {Matriz de correlaciones y reconstrucción lineal}
+
+\justify{El primer paso de la aplicación de un PCA o factorial consiste en construir una matriz de correlaciones desde la cual se realiza una reconstrucción lineal para obtener las cargas factoriales que se usan para el siguiente paso. Tradicionalmente se utiliza una matriz de correlaciones de Pearson, sin embargo, no es lo más adecuado para variables cuasi-cuantitativas o binarias. Por otra parte, el uso de información no numérica tiende a comprometer seriamente el supuesto de linealidad (Linting et al., 2007). En este contexto, una solución común para realizar un PCA o factorial con datos nominales u ordinales es obviar las limitaciones teóricas y realizar el tratamiento de la información como si se tratase de variables continúas utilizando los coeficientes de Pearson (Dominguez Lara, 2014; Nunnally y Bernstein, 1994).}
+
+\justify{Como la opción anterior no es estadísticamente ortodoxa, se han popularizado tratamientos de PCA no lineales ({\itshape Nonlinear} PCA) que permiten manejar de forma más adecuada las variables nominales y ordinales convirtiéndolas en variables numéricas a través de métodos de cuantificación (Gifi, 1990; Linting et al., 2007). Por otra parte, una solución diferente, que tiene relación directa con el objetivo de este trabajo, es utilizar correlaciones policóricas o tetracóricas, las cuales suponen que las categorías de las variables operan como estimaciones de variables no observables con una distribución normal. Diversos autores recomiendan este tipo de correlaciones para PCA o análisis factorial (Dominguez Lara, 2014; Ferrando, 1996; Lorenzo-Seva y Ferrando, 2015).}
+
+\subsection[Retención de componentes/factores] {Retención de componentes/factores}
+
+\justify{El segundo paso consiste en aplicar una reconstrucción lineal con criterios de retención de componentes/factores para obtener resultados más acotados. Estimar el número de componentes o factores que se deben retener es crucial en términos metodológicos, pues una especificación inexacta conduce a interpretaciones erróneas de los datos por sobre o subestimación (Hayton et al., 2004; Velicer et al., 2000).}
+
+\justify{Existen dos criterios tradicionales de retención de componentes/factores para PCA y análisis factorial (González-Bustamante, 2018). El más tradicional es K1 de Kaiser (1960), el cual sugiere retener un número de componentes o factores equivalente a los autovalores ({\itshape eigenvalues}) iguales superiores a uno en la reconstrucción lineal. El segundo criterio clásico es Cattell (1966), que sugiere utilizar un gráfico de sedimentación ({\itshape scree plot}) con un valor promedio que opera como umbral para la selección.}
+
+\justify{Por otro lado, un criterio no tan popularizado, pero bastante exacto según diversas simulaciones, es el análisis paralelo ({\itshape Parallel Analysis}, PA) de Horn (1965). En este análisis se utilizan las matrices de correlaciones de los datos reales y matrices de datos aleatorios simulados con una muestra del mismo tamaño iterada para obtener valores óptimos y ajustar adecuadamente el criterio de retención. Si el autovalor real es mayor que el de las simulaciones después de su última iteración, el componente o factor debe ser retenido ya que es estadísticamente significativo, por otra parte, si es menor se considera un error de muestreo y debiese ser desestimado para evitar sobre o subestimación (Hayton et al., 2004; Turner, 1998).}
+
+\subsection[Rotación de componentes/factores] {Rotación de componentes/factores}
+
+\justify{Finalmente, una vez estimado el número de componentes/factores a retener, se realiza un análisis con aquel umbral para obtener una matriz no rotada. Entonces el paso final es generar una rotación de los ejes de las variables para obtener resultados estables para una adecuada interpretación (González-Bustamante, 2018). Existen dos tipos de rotaciones que se utilizan con frecuencia y trabajan con supuestos metodológicos opuestos: rotación ortogonal y rotación oblicua (Pérez y Medrano, 2010). La rotación ortogonal asume que las variables no están correlacionadas entre sí por lo cual distribuye muy poco la varianza entre los distintos factores o componentes. La rotación oblicua, en cambio, asume correlación entre las variables y niveles relevantes de varianza compartida. En este contexto, hay que considerar que la ortogonalidad es más bien un fenómeno teórico (Pérez y Medrano, 2010), de hecho, Tabachnick y Fidell (2013) sugieren utilizar rotaciones oblicuas cuando existan correlaciones sobre 0,320.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section[Caso práctico: Consumo de medios y participación política en Argentina, Chile y Uruguay] {{\normalfont Caso práctico: Consumo de medios y participación política en Argentina, Chile y Uruguay}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection[Antecedentes] {Antecedentes}
+
+\justify{Las actitudes y la participación política de los individuos se pueden explicar a través de modelos con variables de corto, mediano y largo plazo, los cuales varían dependiendo del caso específico y el momento histórico (Arriagada et al., 2010; González-Bustamante y Henríquez, 2013). Las variables de corto plazo se vinculan al modelo de Rochester, en el cual la teoría de elección racional es preponderante. Por otro lado, las variables de mediano plazo, asociadas al modelo de Michigan, se vinculan a los procesos de socialización a los cuales los individuos están expuestos (Lau y Redlawsk, 2006). Por último, el modelo de Columbia, basado en variables largo plazo, se relaciona con las características heredadas y estables de los individuos como, por ejemplo, sexo o nivel socioeconómico. Esta última variable suele tener una relación significativa bastante robusta con la participación política (Schlozman et al., 2012), fenómeno que se asocia a la existencia de un sesgo de clase en la participación y al concepto de desigualdad política (Dubrow, 2007). Esta desigualdad se ha extendido a formas no convencionales de corte contencioso como la protesta, la cual a comienzos del siglo pasado se asociaba a los sectores más marginados de la población (Dalton et al., 2010).}
+
+\justify{El consumo de medios también puede ser explicado por estos modelos y, a la vez, puede influir en predisposiciones políticas a nivel individual como la evaluación hacia los representantes y al gobierno (Flowers et al., 2003). Las tendencias asociadas al consumo de medios en las sociedades contemporáneas son particularmente sensibles a los avances tecnológicos. Por una parte, los costos de acceso a la información tienden a disminuir mientras que, por otra parte, los patrones de consumo varían por la irrupción de nuevas formas de comunicación. Se advierte un cambio en los flujos tradicionales del proceso comunicativo donde las audiencias tienen la posibilidad de participar como productores de contenidos e información convirtiéndose, de esta forma, en interlocutores activos, situación que genera la cristalización de una relación horizontal y bidireccional en el sistema de medios (Arriagada y Navia, 2013; Del Valle y González-Bustamante, 2018; Hermida et al., 2012).}
+
+\justify{En este contexto, ha emergido una distinción entre medios tradicionales y digitales (Arriagada y Schuster, 2008; Del Valle y González-Bustamante, 2018). Resulta posible distinguir espacios digitales por los cuales la ciudadanía consume información e interactúa (Ortiz-Ayala y Orozco, 2015; Wang, 2007). Dentro de estos espacios las redes sociales digitales, como Facebook, Twitter, YouTube e Instragam, ocupan un espacio relevante (Del Valle y González-Bustamante, 2018; Cárdenas et al., 2017). Estas redes también tienen un potencial contencioso ya que permiten una comunicación más eficiente y una disminución en los costos de la acción colectiva (Castells, 2012).}
+
+\subsection[Datos, medición y procedimiento] {Datos, medición y procedimiento}
+
+\justify{Se trabaja con las encuestas del proyecto “A Crisis of Legitimacy: Challenges of the Political Order in Argentina, Chile, and Uruguay” financiado por el IDRC de Canadá y coordinadas por la UDP. Estas encuestas se aplicaron con entrevistas cara a cara considerando muestras probabilísticas representativas de la población mayor de 18 años en Argentina ($N$ = 1.200), Chile ($N$ = 1.200) y Uruguay ($N$ = 1.202). El trabajo de campo fue entre 2013 y principios de 2014. El error muestral de las encuestas es de $\pm$ 2,8 \% y el nivel de confianza de un 95\%. Otros detalles metodológicos se pueden revisar en Joignant et al. (2017). Estos datos han sido utilizados en publicaciones como González-Bustamante (2018, 2019, 2021) y aunque ciertamente son antiguos, son útiles para esta demostración metodológica.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section[Resultados] {{\normalfont Resultados}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection[Análisis descriptivos y matrices de correlaciones] {Datos y medición}
+
+\subsection[Evaluación de métodos de retención de componentes/factores] {Evaluación de métodos de retención de componentes/factores}
+
+\subsection[Análisis de Componentes Principales] {Análisis de Componentes Principales}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section[Conclusión] {{\normalfont Conclusión}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% \justify{\lipsum[1-2]}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{{\normalfont Referencias}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{list}{}%
+{\leftmargin=1em \itemindent=-1em}
+
+\item{\small Afifi, A., May, S., {\itshape \&} Clark, V. A. (2020). {\itshape Practical Multivariate Analysis, 6th ed}. Boca Raton: CRC Press.}
+
+\item{\small Arriagada, A., {\itshape \&} Navia, P. (2013). Medios y audiencias, ciudadanos y democracia. En A. Arriagada {\itshape \&} P. Navia (eds.), {\itshape Intermedios: Medios de Comunicación y Democracia en Chile}. Santiago: Ediciones UDP.}
+
+\item{\small Arriagada, A., Navia, P., {\itshape \&} Schuster, M. (2010). ¿Consumo luego pienso, o pienso y luego consumo? Consumo de medios, predisposición política, percepción económica y aprobación presidencial. {\itshape Revista de Ciencia Política, 30}(3), 669--695. {\scshape doi:} \href{http://dx.doi.org/10.4067/S0718-090X2010000300005}{\textcolor{blue}{10.4067/S0718-090X2010000300005}}.}
+
+\item{\small Arriagada, A., {\itshape \&} Schuster, M. (2008). Consumo de medios y participación ciudadana de los jóvenes chilenos. {\itshape Cuadernos.info}, (22), 34--41. \\ {\scshape doi:} \href{https://doi.org/10.7764/cdi.22.87}{\textcolor{blue}{10.7764/cdi.22.87}}.}
+
+\item{\small Cárdenas, A., Ballesteros, C., {\itshape \&} Jara, R. (2017). Redes sociales y campañas electorales en Iberoamérica. Un análisis comparativo de los casos de España, México y Chile. {\itshape Cuadernos.info}, (41), 19--40. {\scshape doi:} \href{https://doi.org/10.7764/cdi.41.1259}{\textcolor{blue}{10.7764/cdi.41.1259}}.}
+
+\item{\small Castells, M. (2012). {\itshape Networks of Outrage and Hope: Social Movements in the Internet Age}. Cambridge: Polity Press.}
+
+\item{\small Cattell, R. B. (1966). The Scree Test for the Number of Factors. {\itshape Multivariate Behavioral Research, 1}(2), 245--276. {\scshape doi:} \href{https://doi.org/10.1207/s15327906mbr0102_10}{\textcolor{blue}{10.1207/s15327906mbr0102\_10}}.}
+
+\item{\small Corvalán, A., Cox, P., {\itshape \&} Hernández, C. (2015). Evaluando los determinantes de la participación electoral en Chile: sobre el uso de datos individuales y el sobre-reporte en encuestas. En {\itshape Condicionantes de la participación electoral en Chile}. Santiago: PNUD.}
+
+\item{\small Cupani, M., {\itshape \&} Saurina, I. (2012). Estudios Psicométricos del Self-Directed Search (Forma E) en una muestra de estudiantes argentinos. {\itshape Evaluar, 11}(1). {\scshape doi:} \href{https://doi.org/10.35670/1667-4545.v11.n1.2841}{\textcolor{blue}{10.35670/1667-4545.v11.n1.2841}}.}
+
+\item{\small Dalton, R. J., van Sickle, A., {\itshape \&} Weldon, S. (2010). The Individual-Institutional Nexus of Protest Behaviour. {\itshape British Journal of Political Science, 40}(1), 51--73. {\scshape doi:} \href{https://doi.org/10.1017/S000712340999038X}{\textcolor{blue}{10.1017/S000712340999038X}}.}
+
+\item{\small Del Valle, N., {\itshape \&} González-Bustamante, B. (2018). Agenda política, periodismo y medios digitales en Chile: Notas de investigación sobre pluralismo en Chile. {\itshape Perspectivas de la Comunicación, 11}(1), 291--326.}
+
+\item{\small Dominguez Lara, S. A. (2014). ¿Matrices Policóricas/Tetracóricas o Matrices Pearson? Un estudio metodológico. {\itshape Revista Argentina de Ciencias del Comportamiento, 6}(1), 39--48.}
+
+\item{\small Dubrow, J. K. (2007). Guest Editor’s Introduction: Defining Political Inequality within a Cross-National Perspective. {\itshape International Journal of Sociology, 37}(4), 3--9. {\scshape doi:} \href{https://doi.org/10.2753/IJS0020-7659370400}{\textcolor{blue}{10.2753/IJS0020-7659370400}}.}
+
+\item{\small Ferrando, P. J. (1996). Evaluación de la unidimensionalidad de los ítems mediante análisis factorial. {\itshape Psicothema, 8}(2), 397--410.}
+
+\item{\small Ferrando, P. J., {\itshape \&} Anguiano-Carrasco, C. (2010). El análisis factorial como técnica de investigación en psicología. {\itshape Papeles del Psicólogo, 31}(1), 18--33.}
+
+\item{\small Flowers, J. F., Haynes, A. A., {\itshape \&} Crespin, M. H. (2003). The Media, the Campaing, and the Message. {\itshape American Journal of Political Science, 47}(2), 259--273. {\scshape doi:} \href{https://doi.org/10.1111/1540-5907.00018}{\textcolor{blue}{https://doi.org/10.1111/1540-5907.00018}}.}
+
+\item{\small Galton, F. (1869). {\itshape Hereditary Genius}. Londres: Macmillan {\itshape \&} Co.}
+
+\item{\small Galton, F. (1886). Regression Towards Mediocrity in Hereditary Stature. {\itshape The Journal of the Anthropological Institute of Great Britain and Ireland}, 15, 246--263. {\scshape doi:} \href{https://doi.org/10.2307/2841583}{\textcolor{blue}{10.2307/2841583}}.}
+
+\item{\small Gifi, A. (1990). {\itshape Nonlinear Multivariate Analysis}. Chichester: Wiley.}
+
+\item{\small González-Bustamante, B. (2018). Internet, uso de redes sociales digitales y participación en el Cono Sur. En P. Cottet (ed.), {\itshape Opinión pública contemporánea: Otras posibilidades de compresión e investigación}. Santiago: Social-Ediciones. {\scshape doi:} \href{https://doi.org/10.34720/2nd0-8t73}{\textcolor{blue}{10.34720/2nd0-8t73}}.}
+
+\item{\small González-Bustamante, B. (2019). Brechas, representación y congruencia élite-ciudadanía en Chile y Uruguay. {\itshape Convergencia. Revista de Ciencias Sociales}, (80), 1--27. {\scshape doi:} \href{https://doi.org/10.29101/crcs.v26i80.11097}{\textcolor{blue}{10.29101/crcs.v26i80.11097}}.}
+
+\item{\small González-Bustamante, B. (2021). Hibridación digital en el Cono Sur: Consumo de medios tradicionales, digitales y uso de redes sociales. {\itshape Comunifé: Revista de Comunicación Social}, (21), 31--39. {\scshape doi:} \href{https://doi.org/10.33539/comunife.2021.n21.2580}{\textcolor{blue}{10.33539/comunife.2021.n21.2580}}.}
+
+\item{\small González-Bustamante, B., {\itshape \&} Barría, D. (2015). {\itshape Estatalidad y tendencias estatistas en Chile (2007-2014)}. Ponencia presentada en el VIII Congreso Latinoamericano de Ciencia Política (ALACIP), Lima.}
+
+\item{\small González-Bustamante, B., {\itshape \&} Henríquez, G. (2013). Chile: la campaña digital 2009-2010. En I. Crespo {\itshape \&} J. del Rey (eds.), {\itshape Comunicación Política \& Campañas Electorales en América Latina}. Buenos Aires: Editorial Biblos.}
+
+\item{\small Hair Jr., J. F., Anderson, R. E., Tatham, R. L., {\itshape \&} Black, W. C. (1999). {\itshape Análisis Multivariante, 5ta ed}. Madrid: Pearson Prentice Hall.}
+
+\item{\small Hayton, J. C., Allen, D. G., {\itshape \&} Scarpello, V. (2004). Factor Retention Decisions in Exploratory Factor Analysis: a Tutorial on Parallel Analysis. {\itshape Organizational Research Methods, 7}(2), 191--205. {\scshape doi:} \href{https://doi.org/10.1177/1094428104263675}{\textcolor{blue}{10.1177/1094428104263675}}.}
+
+\item{\small Hermida, A., Fletcher, F., Korell, D., {\itshape \&} Logan, D. (2012). SHARE, LIKE, RECOMMEND: Decoding the social media news consumer. {\itshape Journalism Studies, 13}(5--6), 815--824. {\scshape doi:} \href{https://doi.org/10.1080/1461670X.2012.664430}{\textcolor{blue}{10.1080/1461670X.2012.664430}}.}
+
+\item{\small Horn, J. L. (1965). A rationale and test for the number of factors in factor analysis. {\itshape Psychometrika, 30}(2), 179--185. {\scshape doi:} \href{https://doi.org/10.1007/BF02289447}{\textcolor{blue}{10.1007/BF02289447}}.}
+
+\item{\small Joignant, A., Morales, M., {\itshape \&} Fuentes, C. (2017). {\itshape Malaise in Representation in Latin American Countries}. Nueva York: Palgrave Macmillan.}
+
+\item{\small Kaiser, H. F. (1960). The Application of Electronic Computers to Factor Analysis. {\itshape Educational and Psychological Measurement, 20}(1), 141--151. \\ {\scshape doi:} \href{https://doi.org/10.1177/001316446002000116}{\textcolor{blue}{10.1177/001316446002000116}}.}
+
+\item{\small Kaiser, H. F. (1974). An index of factorial simplicity. {\itshape Psychometrika, 39}(1), 31--36. {\scshape doi:} \href{https://doi.org/10.1007/BF02291575}{\textcolor{blue}{10.1007/BF02291575}}.}
+
+\item{\small Lau, R. R., {\itshape \&} Redlawsk, D. P. (2006). {\itshape How Voters Decide: Information Processing during Elections Campaigns}. Nueva York: Cambridge University Press. {\scshape doi:} \href{https://doi.org/10.1017/CBO9780511791048}{\textcolor{blue}{10.1017/CBO9780511791048}}.}
+
+\item{\small Linting, M., Meulman, J. J., Groenen, P. J. F., {\itshape \&} van der Kooij, A. J. (2007). Nonlinear Principal Component Analysis: Introduction and Application. {\itshape Psychological Methods, 12}(3), 336--358. {\scshape doi:} \href{https://psycnet.apa.org/doi/10.1037/1082-989X.12.3.336}{\textcolor{blue}{10.1037/1082-989X.12.3.336}}.}
+
+\item{\small Lorenzo-Seva, U., \& Ferrando, P. J. (2015). POLYMAT-C: a comprehensive SPSS program for computing the polychoric correlation matrix. {\itshape Behavior Research Methods, 47}(3), 884--889. {\scshape doi:} \href{https://doi.org/10.3758/s13428-014-0511-x}{\textcolor{blue}{10.3758/s13428-014-0511-x}}.}
+
+\item{\small Nunnally, J. C., {\itshape \&} Bernstein, I. H. (1994). {\itshape Psychometric Theory}. Nueva York: McGraw-Hill.}
+
+\item{\small Ortiz-Ayala, A., {\itshape \&} Orozco, M. M. (2015). Involucramiento, participación política y tipología de medios en Colombia. {\itshape Signo y Pensamiento, 34}(66), 80--94. {\scshape doi:} \href{https://doi.org/10.11144/Javeriana.syp34-66.ippt}{\textcolor{blue}{10.11144/Javeriana.syp34-66.ippt}}.}
+
+\item{\small Pearson, K. (1901). LIII. On lines and planes of closest fit to systems of points in space. {\itshape The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science, 2}(11), 559--572. {\scshape doi:} \href{https://doi.org/10.1080/14786440109462720}{\textcolor{blue}{10.1080/14786440109462720}}.}
+
+\item{\small Pérez, E. R., {\itshape \&} Medrano, L. (2010). Análisis Factorial Exploratorio: Bases Conceptuales y Metodológicas. {\itshape Revista Argentina de Ciencias del Comportamiento, 2}(1), 58--66.}
+
+\item{\small Schlozman, K. L., Verba, S., {\itshape \&} Brady, H. E. (2012). {\itshape The Unheavenly Chorus: Unequal Political Voice and the Broken Promise of American Democracy}. Princeton: Princeton University Press. Disponible en \\ \href{https://www.jstor.org/stable/j.ctt7sn9z}{\textcolor{blue}{https://www.jstor.org/stable/j.ctt7sn9z}}.}
+
+\item{\small Spearman, C. (1904). ``General Intelligence,'' Objectively Determined and Measured. {\itshape The American Journal of Psychology, 15}(2), 201--292. \\ {\scshape doi:} \href{https://doi.org/10.2307/1412107}{\textcolor{blue}{10.2307/1412107}}.}
+
+\item{\small Tabachnick, B. G., {\itshape \&} Fidell, L. S. (2013). {\itshape Using Multivariate Statistics, 6th ed}. Harlow: Pearson Education.}
+
+\item{\small Turner, N. E. (1998). The Effect of Common Variance and Structure Pattern on Random Data Eigenvalues: Implications for the Accuracy of Parallel Analysis. {\itshape Educational and Psychological Measurement, 58}(4), 541--568. {\scshape doi:} \href{https://doi.org/10.1177/0013164498058004001}{\textcolor{blue}{10.1177/0013164498058004001}}.}
+
+\item{\small van Belle, G., Fisher, L. D., Heagerty, P. J., \& Lumley, T. (2004). {\itshape Bioestatistics: A Methodology for the Health Sciences, 2nd ed}. Nueva York: Wiley Series in Probability and Statistics.}
+
+\item{\small Velicer, W. F., Eaton, C. A., {\itshape \&} Fava, J. L. (2000). Construct Explication Through Factor or Component Analysis: A Review and Evaluation of Alternative Procedures for Determining the Number of Factors or Components. En R. D. Goffin {\itshape \&} E. Helmes (eds.), {\itshape Problems and Solutions in Human Assessment}. Boston: Springer US. {\scshape doi:} \href{https://doi.org/10.1007/978-1-4615-4397-8_3}{\textcolor{blue}{10.1007/978-1-4615-4397-8\_3}}.}
+
+\item{\small Wang, S.-I. (2007). Political Use of the Internet, Political Attitudes and Political Participation. {\itshape Asian Journal of Communication}, 17(4), 381--395. {\scshape doi:} \href{https://doi.org/10.1080/01292980701636993}{\textcolor{blue}{10.1080/01292980701636993}}.}
+
+\end{list}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{{\normalfont Historial de revisiones}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{-0.6cm}
+\begin{table}[h!]
+\begin{tabular}{@{}lll@{}}
+{\small 1,0} & {\small 9 noviembre 2021} & {\small Manuscrito original} \\[0.8mm]
+{\small 2,0$^\dagger$} & {\small 29 diciembre 2023} & {\small Manuscrito revisado} \\[0.8mm]
+{\small 3,0$^\dagger$} & {\small 30 diciembre 2023} & {\small Fecha de publicación} \\[0.8mm]
+{\small 4,0$^\dagger$} & {\small 2 enero 2024} & {\small Correcciones menores} \\[0.8mm]
+{\small 5,0$^\dagger$} & {\small\textcolor{red}{ TBC}} & {\small Correcciones menores} \\
+\end{tabular}
+\end{table}
+\vspace{0.3cm}
+{\noindent \footnotesize {\normalsize $^\dagger$} versión disponible en SocArXiv ({\scriptsize DOI:} \href{https://doi.org/10.31235/osf.io/npc9e}{\textcolor{blue}{10.31235/osf.io/npc9e}}).}
+
+\end{document}
+
+\end{document}
