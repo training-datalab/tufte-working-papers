@@ -153,7 +153,7 @@
 
 \subsection[Algoritmos] {Algoritmos}
 
-\justify{El modelo {\itshape spring-embedder} de Eades (1984) opera con una fórmula de atracción $F_{\alpha} = -k * d$, donde $d$ es una distancia geométrica entre dos {\itshape nodos} y $k$ un ajuste para el escalamiento de la red, y una fórmula de repulsión como si se tratase de partículas eléctricamente cargadas $F_{r} = k /d^{2}$. La fórmula clásica de Fruchterman y Reingold (1991), utilizada por González-Bustamante y Cisternas (2016), constituye una modificación basada en fórmulas de atracción $F_{\alpha} = d^{2} / k$ y repulsión $F_{r} = -k^{2} / d$.}
+\justify{El modelo {\itshape spring-embedder} de Eades (1984) opera con una fórmula de atracción $F_{\alpha} = -k \times d$, donde $d$ es una distancia geométrica entre dos {\itshape nodos} y $k$ un ajuste para el escalamiento de la red, y una fórmula de repulsión como si se tratase de partículas eléctricamente cargadas $F_{r} = k /d^{2}$. La fórmula clásica de Fruchterman y Reingold (1991), utilizada por González-Bustamante y Cisternas (2016), constituye una modificación basada en fórmulas de atracción $F_{\alpha} = d^{2} / k$ y repulsión $F_{r} = -k^{2} / d$.}
 
 \justify{En general, la diferencia más relevante entre los algoritmos dirigidos por fuerza es el rol de la distancia en la espacialización del gráfico (Noack, 2007a; véase también Jacomy et al., 2014). La fuerza depende de la distancia entre los {\itshape nodos} y la relación entre ambas puede ser lineal, exponencial o logarítmica (Jacomy et al., 2014).  En el modelo clásico de Eades (1984) la relación es lineal. Por tanto, la ecuación de un modelo atracción por fuerza lineal sin constante sería (1).}
 
@@ -185,10 +185,10 @@ F_{g} = k_{g} (deg(n) + 1)
 F_{\alpha}(n_{1}, n_{2}) = \frac{d(n_{1}, n_{2})}{deg(n_{1} + 1)}
 \end{equation}
 
-\justify{El efecto para evitar solapamiento, por otra parte, mejora la visualización considerando el tama\~no de los {\itshape nodos} y su distancia $d^{`} (n_{1}, n_{2}) = d (n_{1}, n_{2}) - size(n_{1}) - size(n_{2})$. Si $d^{`} (n_{1}, n_{2}) > 0$ no hay solapamiento, por lo cual se utiliza la ecuaci\'on de repulsi\'on normal. Sin embargo, si $d^{`} (n_{1}, n_{2}) < 0$, entonces $F_{\alpha} (n_{1}, n_{2}) = 0$ y la repulsi\'on ser\'a m\'as fuerte (6) (Jacomy et al., 2014).}
+\justify{El efecto para evitar solapamiento, por otra parte, mejora la visualización considerando el tamaño de los {\itshape nodos} y su distancia $\hat{d} (n_{1}, n_{2}) = d (n_{1}, n_{2}) - size(n_{1}) - size(n_{2})$. Si $\hat{d} (n_{1}, n_{2}) > 0$ no hay solapamiento, por lo cual se utiliza la ecuación de repulsión normal. Sin embargo, si $\hat{d} (n_{1}, n_{2}) < 0$, entonces $F_{\alpha} (n_{1}, n_{2}) = 0$ y la repulsión será más fuerte (6) (Jacomy et al., 2014).}
 
 \begin{equation} 
-F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
+F_{r}(n_{1}, n_{2}) = \hat{k}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
 \end{equation}
 
 \justify{Además, siguiendo a Blondel et al. (2008), se utiliza un algoritmo de modularidad donde cada {\itshape nodo} $i$ se sitúa con sus {\itshape alters} $j$ y se eval\'ua la ganancia de modularidad al eliminar $i$. El {\itshape nodo} entonces se coloca en la comunidad $C$ donde la ganancia es m\'axima siempre que sea positiva, si es negativa se mantiene en la posici\'on inicial. Este proceso se itera hasta que no existen movimientos que puedan mejorar el nivel de modularidad (Newman y Girvan, 2004).  La modularidad $\Delta Q$ se calcula considerando los v\'inculos $in$ dentro de $C$, los v\'inculos $tot$ hacia {\itshape nodos} dentro de $C$, la suma $k_{i}$ de enlaces hacia el {\itshape nodo} $i$ cuyo aporte se eval\'ua, y la suma de todos los v\'inculos de la red $m$ (7) (Blondel et al., 2008)\footnote{Tambi\'en se calcula el di\'ametro de la red con el algoritmo de centralidad de intermediaci\'on de Brandes (2001). Esto permite estimar el sendero m\'as extenso entre cualquier {\itshape nodo} de la red.}.}
@@ -421,7 +421,7 @@ F_{r}(n_{1}, n_{2}) = k^{`}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
 {\small 5,0$^\dagger$} & {\small 30 diciembre 2021} & {\small Correcciones menores} \\[0.8mm]
 {\small 6,0$^\dagger$} & {\small 7 abril 2022} & {\small Correcciones menores} \\[0.8mm]
 {\small 7,0$^\dagger$} & {\small 25 abril 2022} & {\small Correcciones menores} \\[0.8mm]
-{\small 8,0$^\dagger$} & {\small 4 enero 2024} & {\small Correcciones menores} \\
+{\small 8,0$^\dagger$} & {\small 8 enero 2024} & {\small Correcciones menores} \\
 \end{tabular}
 \end{table}
 \vspace{0.3cm}
