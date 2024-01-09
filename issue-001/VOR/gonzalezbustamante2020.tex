@@ -64,6 +64,8 @@
 \def\figurename{Figura}
 }
 
+\renewcommand{\theequation}{Eq. \arabic{equation}}
+
 \usepackage{subfig}
 \usepackage{emerald}
 \usepackage[T1]{fontenc}
@@ -155,43 +157,43 @@
 
 \justify{El modelo {\itshape spring-embedder} de Eades (1984) opera con una fórmula de atracción $F_{\alpha} = -k \times d$, donde $d$ es una distancia geométrica entre dos {\itshape nodos} y $k$ un ajuste para el escalamiento de la red, y una fórmula de repulsión como si se tratase de partículas eléctricamente cargadas $F_{r} = k /d^{2}$. La fórmula clásica de Fruchterman y Reingold (1991), utilizada por González-Bustamante y Cisternas (2016), constituye una modificación basada en fórmulas de atracción $F_{\alpha} = d^{2} / k$ y repulsión $F_{r} = -k^{2} / d$.}
 
-\justify{En general, la diferencia más relevante entre los algoritmos dirigidos por fuerza es el rol de la distancia en la espacialización del gráfico (Noack, 2007a; véase también Jacomy et al., 2014). La fuerza depende de la distancia entre los {\itshape nodos} y la relación entre ambas puede ser lineal, exponencial o logarítmica (Jacomy et al., 2014).  En el modelo clásico de Eades (1984) la relación es lineal. Por tanto, la ecuación de un modelo atracción por fuerza lineal sin constante sería (1).}
+\justify{En general, la diferencia más relevante entre los algoritmos dirigidos por fuerza es el rol de la distancia en la espacialización del gráfico (Noack, 2007a; véase también Jacomy et al., 2014). La fuerza depende de la distancia entre los {\itshape nodos} y la relación entre ambas puede ser lineal, exponencial o logarítmica (Jacomy et al., 2014).  En el modelo clásico de Eades (1984) la relación es lineal. Por tanto, la ecuación de un modelo atracción por fuerza lineal sin constante sería (Eq. 1).}
 
 \begin{equation} 
 F_{\alpha}(n_{1}, n_{2}) = d(n_{1}, n_{2})
 \end{equation}
 
-\justify{Si se utiliza el concepto de modelo de energía o de atracción-repulsión de Noack (2009), se puede especificar una notación simple para cada algoritmo basada en el exponente de la distancia de las fórmulas de $F_{\alpha}$ y $F_{r}$. Entonces, para {\itshape spring-embedder} sería (1, $-$2), Fruchterman y Reingold (2, $-$1), y ForceAtlas (1, $-$1). Para ForceAtlas2 la fórmula de repulsión toma en cuenta el grado de los {\itshape nodos} ({\itshape deg}) con base en un recuento de los {\itshape edges} conectados, siendo muy similar a la fórmula de Noack (2007a) con un ajuste de +1 para asegurar que $deg = 0$ tenga algo de fuerza de repulsión (2) (Jacomy et al., 2014). En este trabajo se utiliza $k_{r} = 1,5$.
+\justify{Si se utiliza el concepto de modelo de energía o de atracción-repulsión de Noack (2009), se puede especificar una notación simple para cada algoritmo basada en el exponente de la distancia de las fórmulas de $F_{\alpha}$ y $F_{r}$. Entonces, para {\itshape spring-embedder} sería (1, $-$2), Fruchterman y Reingold (2, $-$1), y ForceAtlas (1, $-$1). Para ForceAtlas2 la fórmula de repulsión toma en cuenta el grado de los {\itshape nodos} ({\itshape deg}) con base en un recuento de los {\itshape edges} conectados, siendo muy similar a la fórmula de Noack (2007a) con un ajuste de +1 para asegurar que $deg = 0$ tenga algo de fuerza de repulsión (Eq. 2) (Jacomy et al., 2014). En este trabajo se utiliza $k_{r} = 1,5$.
 
 \begin{equation} 
 F_{r}(n_{1}, n_{2}) = k_{r}\frac{(deg(n_{1}) + 1) (deg(n_{2}) + 1)}{d(n_{1}, n_{2})}
 \end{equation}
 
-\justify{Por otra parte, se utiliza un modelo logarítmico de fuerza basado en el modelo de energía LinLog de Noack (2007b), con un ajuste similar al de la fórmula de repulsión (3) (Jacomy et al., 2014).}
+\justify{Por otra parte, se utiliza un modelo logarítmico de fuerza basado en el modelo de energía LinLog de Noack (2007b), con un ajuste similar al de la fórmula de repulsión (Eq. 3) (Jacomy et al., 2014).}
 
 \begin{equation} 
 F_{\alpha}(n_{1}, n_{2}) = log (1 + d(n_{1}, n_{2}))
 \end{equation}
 
-\justify{Además, se utiliza un efecto de gravedad $F_{g}(n)$ para prevenir la desconexión de componentes que formen islas alejadas en el grafo (4). En este trabajo se utiliza $k_{g} = 1,5$.}
+\justify{Además, se utiliza un efecto de gravedad $F_{g}(n)$ para prevenir la desconexión de componentes que formen islas alejadas en el grafo (Eq. 4). En este trabajo se utiliza $k_{g} = 1,5$.}
 
 \begin{equation} 
 F_{g} = k_{g} (deg(n) + 1)
 \end{equation}
 
-\justify{Por último, se utilizan dos efectos propios de ForceAtlas2: disuadir centros de actividad ({\itshape Hubs}) y evitar solapamiento (Jacomy et al., 2014). El efecto de disuadir {\itshape Hubs} permite que {\itshape nodos} con mayor cantidad de vínculos dirigidos hacia si mismos ocupen posiciones centrales. Para esto se divide la fuerza de atracción de cada {\itshape nodo} por su grado más uno (5).}
+\justify{Por último, se utilizan dos efectos propios de ForceAtlas2: disuadir centros de actividad ({\itshape Hubs}) y evitar solapamiento (Jacomy et al., 2014). El efecto de disuadir {\itshape Hubs} permite que {\itshape nodos} con mayor cantidad de vínculos dirigidos hacia si mismos ocupen posiciones centrales. Para esto se divide la fuerza de atracción de cada {\itshape nodo} por su grado más uno (Eq. 5).}
 
 \begin{equation} 
 F_{\alpha}(n_{1}, n_{2}) = \frac{d(n_{1}, n_{2})}{deg(n_{1} + 1)}
 \end{equation}
 
-\justify{El efecto para evitar solapamiento, por otra parte, mejora la visualización considerando el tamaño de los {\itshape nodos} y su distancia $\hat{d} (n_{1}, n_{2}) = d (n_{1}, n_{2}) - size(n_{1}) - size(n_{2})$. Si $\hat{d} (n_{1}, n_{2}) > 0$ no hay solapamiento, por lo cual se utiliza la ecuación de repulsión normal. Sin embargo, si $\hat{d} (n_{1}, n_{2}) < 0$, entonces $F_{\alpha} (n_{1}, n_{2}) = 0$ y la repulsión será más fuerte (6) (Jacomy et al., 2014).}
+\justify{El efecto para evitar solapamiento, por otra parte, mejora la visualización considerando el tamaño de los {\itshape nodos} y su distancia $\hat{d} (n_{1}, n_{2}) = d (n_{1}, n_{2}) - size(n_{1}) - size(n_{2})$. Si $\hat{d} (n_{1}, n_{2}) > 0$ no hay solapamiento, por lo cual se utiliza la ecuación de repulsión normal. Sin embargo, si $\hat{d} (n_{1}, n_{2}) < 0$, entonces $F_{\alpha} (n_{1}, n_{2}) = 0$ y la repulsión será más fuerte (Eq. 6) (Jacomy et al., 2014).}
 
 \begin{equation} 
 F_{r}(n_{1}, n_{2}) = \hat{k}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
 \end{equation}
 
-\justify{Además, siguiendo a Blondel et al. (2008), se utiliza un algoritmo de modularidad donde cada {\itshape nodo} $i$ se sitúa con sus {\itshape alters} $j$ y se eval\'ua la ganancia de modularidad al eliminar $i$. El {\itshape nodo} entonces se coloca en la comunidad $C$ donde la ganancia es m\'axima siempre que sea positiva, si es negativa se mantiene en la posici\'on inicial. Este proceso se itera hasta que no existen movimientos que puedan mejorar el nivel de modularidad (Newman y Girvan, 2004).  La modularidad $\Delta Q$ se calcula considerando los v\'inculos $in$ dentro de $C$, los v\'inculos $tot$ hacia {\itshape nodos} dentro de $C$, la suma $k_{i}$ de enlaces hacia el {\itshape nodo} $i$ cuyo aporte se eval\'ua, y la suma de todos los v\'inculos de la red $m$ (7) (Blondel et al., 2008)\footnote{Tambi\'en se calcula el di\'ametro de la red con el algoritmo de centralidad de intermediaci\'on de Brandes (2001). Esto permite estimar el sendero m\'as extenso entre cualquier {\itshape nodo} de la red.}.}
+\justify{Además, siguiendo a Blondel et al. (2008), se utiliza un algoritmo de modularidad donde cada {\itshape nodo} $i$ se sitúa con sus {\itshape alters} $j$ y se evalúa la ganancia de modularidad al eliminar $i$. El {\itshape nodo} entonces se coloca en la comunidad $C$ donde la ganancia es máxima siempre que sea positiva, si es negativa se mantiene en la posición inicial. Este proceso se itera hasta que no existen movimientos que puedan mejorar el nivel de modularidad (Newman y Girvan, 2004).  La modularidad $\Delta Q$ se calcula considerando los vínculos $in$ dentro de $C$, los vínculos $tot$ hacia {\itshape nodos} dentro de $C$, la suma $k_{i}$ de enlaces hacia el {\itshape nodo} $i$ cuyo aporte se evalúa, y la suma de todos los vínculos de la red $m$ (Eq. 7) (Blondel et al., 2008)\footnote{También se calcula el diámetro de la red con el algoritmo de centralidad de intermediación de Brandes (2001). Esto permite estimar el sendero más extenso entre cualquier {\itshape nodo} de la red.}.}
 
 \begin{equation} 
 \Delta Q = \left[\frac{\sum_{in} + 2k_{i, in}}{2m} - \left(\frac{\sum_{tot} + k_{i}}{2m}\right)^{2}\right] - \left[\frac{\sum_{in}}{2m} - \left(\frac{\sum_{tot}}{2m}\right)^{2} - \left(\frac{k_{i}}{2m}\right)^{2}\right]
@@ -240,7 +242,7 @@ F_{r}(n_{1}, n_{2}) = \hat{k}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
   \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versi\'on se utilizan colores para indicar militancia pol\'itica: PDC azul purp\'ureo, RN malaquita, UDI tomate, PPD violeta, PS anaranjado, IND malva, PRSD carmes\'i y UCCP verde oscuro. Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
 \end{figure}
 
-\justify{En la Figura 3, se puede apreciar un crecimiento de los {\itshape nodos} pertenecientes a la Uni\'on Dem\'ocrata Independiente (UDI), conglomerado que tiene lazos principalmente con RN, sus socios de coalici\'on. En el grafo con el algoritmo ForceAtlas2 se puede visualizar su constituci\'on de mejor forma: como un m\'odulo con fuertes conexiones entre s\'i y conexiones con RN, lo que los ubica en la periferia de la red. El grafo medio es de 39,183, el di\'ametro de la red cuatro y la densidad 0,329.}
+\justify{En la Figura 3, se puede apreciar un crecimiento de los {\itshape nodos} pertenecientes a la Uni\'on Dem\'ocrata Independiente (UDI), conglomerado que tiene lazos principalmente con RN, sus socios de coalici\'on. En el grafo con el algoritmo ForceAtlas2 se puede visualizar su constituci\'on de mejor forma: como un m\'odulo con fuertes conexiones entre s\'i y conexiones con RN, lo que los ubica en la periferia de la red. El grafo medio es de 39,183, el diámetro de la red cuatro y la densidad 0,329.}
 
 \begin{figure}[h!]
 \captionsetup[subfigure]{labelformat=empty}
@@ -248,8 +250,8 @@ F_{r}(n_{1}, n_{2}) = \hat{k}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
   \smallskip\noindent\small Figura 4 \\ Legislatura 2002-2006
   \subfloat[Fruchterman y Reingold]{\includegraphics[width=.45\linewidth]{../01.Figures/FR-2002}}
   \subfloat[ForceAtlas2]{\includegraphics[width=.5\linewidth]{../01.Figures/FA2-2002}}
-  \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versi\'on se utilizan colores para indicar militancia pol\'itica: UDI azul purp\'ureo, PDC malaquita, PPD tomate, RN violeta, IND anaranjado, PS malva y PRSD carmes\'i.\\
-  Fuente: Elaboraci\'on propia con datos de Gonz\'alez-Bustamante y Cisternas (2016).
+  \\ \smallskip\noindent\scriptsize Nota: El grafo original con el algoritmo Fruchterman y Reingold fue publicado en escala de grises. En esta versión se utilizan colores para indicar militancia pol\'itica: UDI azul purpúreo, PDC malaquita, PPD tomate, RN violeta, IND anaranjado, PS malva y PRSD carmesí.\\
+  Fuente: Elaboración propia con datos de González-Bustamante y Cisternas (2016).
 \end{figure}
 
 \justify{En la Figura 4 se aprecia un crecimiento importante de la UDI. Aquello se percibe de mejor forma con la aplicaci\'on del algoritmo ForceAtlas2, como tambi\'en la posici\'on de intermediaci\'on que tienden a ocupar ciertos {\itshape nodos}. El grafo medio de la red es 34,767, el di\'ametro cuatro y la densidad 0,292.}
@@ -284,7 +286,7 @@ F_{r}(n_{1}, n_{2}) = \hat{k}_{r}(deg(n_{1}) + 1)(deg(n_{2}) + 1)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section[Discusi\'on] {{\normalfont Discusi\'on}}
+\section[Discusión] {{\normalfont Discusión}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
