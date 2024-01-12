@@ -22,7 +22,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\hyphenation{Latino-america-na Elecci\'on eleccio-nes}
+\hyphenation{Latino-america-na eleccio-nes}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -154,6 +154,41 @@
 \subsection[Datos, medición y procedimiento] {Datos, medición y procedimiento}
 
 \justify{Se trabaja con las encuestas del proyecto “A Crisis of Legitimacy: Challenges of the Political Order in Argentina, Chile, and Uruguay” financiado por el IDRC de Canadá y coordinadas por la UDP. Estas encuestas se aplicaron con entrevistas cara a cara considerando muestras probabilísticas representativas de la población mayor de 18 años en Argentina ($N$ = 1.200), Chile ($N$ = 1.200) y Uruguay ($N$ = 1.202). El trabajo de campo fue entre 2013 y principios de 2014. El error muestral de las encuestas es de $\pm$ 2,8 \% y el nivel de confianza de un 95\%. Otros detalles metodológicos se pueden revisar en Joignant et al. (2017). Estos datos han sido utilizados en publicaciones como González-Bustamante (2018, 2019, 2021) y aunque ciertamente son antiguos, son útiles para esta demostración metodológica.}
+
+\justify{Se realiza un PCA para consumo de medios y participación política en Argentina, Chile y Uruguay de forma similar a González-Bustamante (2018). Sin embargo, en estricto rigor no se replica aquel análisis pues se implementan dos diferencias metodológicas sustanciales. Primero, se utiliza una matriz policórica para evaluar la precisión de este tipo de correlaciones con variables binarias y ordinales (Tabla 1), en contraste con las correlaciones de Pearson. Segundo, no se computa directamente el análisis, previamente se construyen manualmente las matrices de correlaciones, en este caso una matriz policórica y de Pearson, desde las cuales se extraen, a través de una reconstrucción lineal, las primeras cargas factoriales para aplicar criterios de retención de componentes/factores, luego obtener las cargas factoriales no rotadas y, finalmente, generar la rotación de ejes. Este procedimiento permite una aplicación exacta del factor de expansión muestral para asegurar mayor precisión en la inferencia estadística.}
+
+\begin{table*}[h]
+  \centering
+  \fontfamily{ppl}\selectfont
+   \smallskip\noindent\small Tabla 1 \\ Operacionalización de variables sobre consumo de medios y participación política en Argentina, Chile y Uruguay \\~\\
+  \begin{tabular}{c c c}
+    \toprule
+    Variable & Pregunta & Tipo \\
+    \midrule
+    \multirow{2}{*}{Participación electoral} & ¿Usted fue a votar en las últimas elecciones?  & \multirow{2}{*}{Binaria}\\
+    & ¿Acudirá a votar en las próximas elecciones? & \\ \midrule
+    \multirow{3}{*}{Identificación partidaria} & ¿Cuál es de los siguientes partidos políticos & \multirow{3}{*}{Nominal}\\
+    & representa mejor sus intereses, creencias & \\
+    & y valores? & \\ \midrule
+    \multirow{2}{*}{Participación en protestas} & ¿En los últimos 12 meses ha participado en & \multirow{2}{*}{Binaria} \\
+    & manifestaciones en la vía pública? & \\ \midrule
+    \multirow{2}{*}{Consumo por televisión} & ¿Con qué frecuencia ve noticias o programas & \multirow{3}{*}{Ordinal}  \\
+    & de política en televisión? & \\ \midrule
+    \multirow{2}{*}{Consumo por radio} & ¿Con qué frecuencia escucha noticias o &  \multirow{2}{*}{Ordinal} \\
+    & programas de política en la radio? & \\ \midrule
+    Consumo por diarios o & ¿Con qué frecuencia lee de política en diarios & \multirow{2}{*}{Ordinal} \\
+    revistas & o revistas?  & \\ \midrule
+    \multirow{2}{*}{Consumo por Internet} & ¿Con qué frecuencia se informa de política & \multirow{2}{*}{Ordinal} \\
+    & por Internet? & \\ \midrule
+    \multirow{2}{*}{Uso de redes sociales} & ¿En los últimos 12 meses ha expresado su & \multirow{2}{*}{Binaria} \\
+    & opinión a través de redes sociales en Internet? & \\ \bottomrule
+  \end{tabular}
+  \\~\\ \smallskip\noindent\scriptsize Nota: La variable de identificación partidaria se recodificó como binaria. \\ Fuente: Elaboración propia con cuestionarios de encuestas IDRC-UDP 2013-14.
+\end{table*}
+
+\justify{La participación electoral en el caso argentino se mide con la participación postelectoral auto-reportada, no con intención de voto. Por este motivo es necesario evaluar con precaución esta variable ya que pueden existir sesgos de sobre-reporte, especialmente con la participación preelectoral o intención de voto (Corvalán et al., 2015).}
+
+\justify{Como criterios de retención de componentes/factores se utilizan K1, Cattell y PA. Se realizan tres estimaciones de PA con matrices simuladas con 10.000 iteraciones por estimación. Previo a la primera iteración de cada estimación se fija un valor inicial ({\itshape seed}) para asegurar replicabilidad y evaluar la precisión y estabilidad del análisis. Se utilizan los siguientes valores: \{$s_{1}$ = 2.042.013; $s_{2}$ = 15.052.016; $s_{3}$ = 18.062.018\}. Por último, se genera una rotación Oblimin.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
